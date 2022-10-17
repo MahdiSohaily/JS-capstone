@@ -1,0 +1,24 @@
+{
+  "name": "js-capston",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MahdiSohaily/JS-capston.git"
+  },
+  "keywords": [],
+  "author": "Mahdi Rezaei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MahdiSohaily/JS-capston/issues"
+  },
+  "homepage": "https://github.com/MahdiSohaily/JS-capston#readme",
+  "devDependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}

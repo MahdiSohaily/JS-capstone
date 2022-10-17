@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack --webpack.config.js",
+    "build": "webpack",
     "start": "webpack serve --open",
     "watch": "webpack --watch"
   },
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/MahdiSohaily/JS-capston#readme",
   "devDependencies": {
     "css-loader": "^6.7.1",
+    "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.74.0",

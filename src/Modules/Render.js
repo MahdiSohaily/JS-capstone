@@ -1,20 +1,18 @@
 /* eslint-disable linebreak-style */
-export default class Product {
-  // eslint-disable-next-line class-methods-use-this
-  render(obj) {
-    return `
+function render(obj) {
+  return `
     <article class="product">
         <header>
-          <img src="${obj.image}" alt="Product image">
+          <img class="product-image" src="${obj.image}" alt="Product image">
         </header>
         <div class="product-details pt-300">
           <div class="actions pb-100">
             <div class="like">
-              <img class="hit-like" width="20" height="20" src="./images/hearth-icon.svg" alt="hearth-icon">
+              <img class="hit-like" data-liked="${obj.id}" width="20" height="20" src="./images/hearth-icon.svg" alt="hearth-icon">
               <p>10 likes</p>
             </div>
             <div class="comment">
-              <img class="hit-like" data-display="${obj.id}" width="20" height="20" src="./images/comment-icon.svg" alt="comment icon">
+              <img class="hit-comment" data-display="${obj.id}" width="20" height="20" src="./images/comment-icon.svg" alt="comment icon">
               <p>20 comments</p>
             </div>
           </div>
@@ -24,5 +22,9 @@ export default class Product {
         </div>
       </article>
     `;
-  }
 }
+
+function like(id) {
+  return (id);
+}
+export { render, like };

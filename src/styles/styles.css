@@ -630,6 +630,11 @@ select {
   gap: var(--size-500);
 }
 
+.product-image {
+  width: 260px;
+  height: 260px;
+}
+
 .product-title {
   font-size: var(--size-300);
 }

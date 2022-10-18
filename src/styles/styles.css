@@ -544,6 +544,10 @@ select {
 
 /* --------------------- START COMPONENT STYLES -------------------- */
 /* 1- header section styles */
+header {
+  border-bottom: 1.5px solid var(--grayish-blue);
+}
+
 .navbar {
   display: flex;
   align-items: center;

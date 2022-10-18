@@ -1,8 +1,8 @@
 :root {
-  --orange: #ff7d1a;
+  --orange: hsl(26, 100%, 55%);
   --pale-orange: hsl(25, 100%, 94%);
-  --very-dark-blue: #1d2025;
-  --dark-grayish-blue: #68707d;
+  --very-dark-blue: hsl(218, 12%, 13%);
+  --dark-grayish-blue: hsl(217, 9%, 45%);
   --grayish-blue: hsl(220, 14%, 75%);
   --light-grayish-blue: hsl(223, 64%, 98%);
   --white: hsl(0, 0%, 100%);

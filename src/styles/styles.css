@@ -1,3 +1,25 @@
+:root {
+  --orange: hsl(26, 100%, 55%);
+  --pale-orange: hsl(25, 100%, 94%);
+  --very-dark-blue: hsl(220, 13%, 13%);
+  --dark-grayish-blue: hsl(219, 9%, 45%);
+  --grayish-blue: hsl(220, 14%, 75%);
+  --light-grayish-blue: hsl(223, 64%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --fw-400: 400;
+  --fw-700: 700;
+
+  --size-100: 0.25em;
+  --size-200: 0.5em;
+  --size-300: 1em;
+  --size-400: 1.5em;
+  --size-500: 2em;
+  --size-600: 3em;
+  --size-700: 3.5em;
+  --size-800: 4em;
+  --size-900: 5em;
+}
 /* Box sizing rules */
 *,
 *::before,
@@ -53,9 +75,9 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
@@ -65,3 +87,7 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+/* --------------------- START UTILITY CLASSES -------------------- */
+.
+/* --------------------- END UTILITY CLASSES -------------------- */

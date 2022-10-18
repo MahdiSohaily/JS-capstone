@@ -53,8 +53,8 @@ body {
 }
 
 /* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+a {
+  text-decoration: none;
 }
 
 /* Make images easier to work with */
@@ -543,3 +543,15 @@ select {
 /* --------------------- END UTILITY CLASSES -------------------- */
 
 /* --------------------- START COMPONENT STYLES -------------------- */
+/* 1- header section styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: var(--size-500);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--size-400);
+}

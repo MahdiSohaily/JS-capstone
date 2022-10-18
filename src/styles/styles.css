@@ -155,6 +155,7 @@ select {
   background-color: var(--black);
 }
 
+/* padding utility classes */
 .p-100 {
   padding: var(--size-100);
 }
@@ -335,6 +336,7 @@ select {
   padding-left: var(--size-900);
 }
 
+/* margin utility classes */
 .m-100 {
   margin: var(--size-100);
 }

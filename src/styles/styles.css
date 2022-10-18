@@ -89,5 +89,36 @@ select {
 }
 
 /* --------------------- START UTILITY CLASSES -------------------- */
-.
+.text-orange {
+  color: var(--orange);
+}
+
+.text-pale-orange {
+  color: var(--pale-orange);
+}
+
+.text-very-dark-blue {
+  color: var(--very-dark-blue);
+}
+
+.text-dark-grayish-blue {
+  color: var(--dark-grayish-blue);
+}
+
+.text-grayish-blue {
+  color: var(--grayish-blue);
+}
+
+.text-light-grayish-blue {
+  color: var(--light-grayish-blue);
+}
+
+.text-white {
+  color: var(--white);
+}
+
+.text-black {
+  color: var(--black);
+}
+
 /* --------------------- END UTILITY CLASSES -------------------- */

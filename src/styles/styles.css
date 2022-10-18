@@ -9,7 +9,6 @@
   --black: hsl(0, 0%, 0%);
   --fw-400: 400;
   --fw-700: 700;
-
   --size-100: 0.25em;
   --size-200: 0.5em;
   --size-300: 1em;
@@ -20,6 +19,7 @@
   --size-800: 4em;
   --size-900: 5em;
 }
+
 /* Box sizing rules */
 *,
 *::before,
@@ -89,6 +89,7 @@ select {
 }
 
 /* --------------------- START UTILITY CLASSES -------------------- */
+
 /* Text color */
 .text-orange {
   color: var(--orange);
@@ -543,6 +544,7 @@ select {
 /* --------------------- END UTILITY CLASSES -------------------- */
 
 /* --------------------- START COMPONENT STYLES -------------------- */
+
 /* 1- header section styles */
 header {
   border-bottom: 1.5px solid var(--grayish-blue);
@@ -593,6 +595,7 @@ header {
   inset: 0;
   background-color: rgba(0, 0, 0, 0.615);
 }
+
 .open .nav-menu {
   display: block;
   text-align: left;

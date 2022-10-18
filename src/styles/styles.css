@@ -621,3 +621,20 @@ header {
   color: var(--very-dark-blue);
   font-weight: var(--fw-700);
 }
+
+/* 2. main page styles */
+.product-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-300);
+}
+
+.product-title {
+  font-size: var(--size-300);
+}
+
+@media screen and (min-width: 40em) {
+  .product-container {
+    flex-direction: row;
+  }
+}

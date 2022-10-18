@@ -15,8 +15,8 @@
   --size-300: 1em;
   --size-400: 1.5em;
   --size-500: 2em;
-  --size-600: 3em;
-  --size-700: 3.5em;
+  --size-600: 2.5em;
+  --size-700: 3em;
   --size-800: 4em;
   --size-900: 5em;
 }
@@ -515,6 +515,24 @@ select {
 
 .ml-900 {
   margin-left: var(--size-900);
+}
+
+.primary-heading {
+  font-size: var(--size-500);
+}
+
+.secondary-heading {
+  font-size: var(--size-400);
+}
+
+@media screen and (min-width: 40em) {
+  .primary-heading {
+    font-size: var(--size-600);
+  }
+
+  .secondary-heading {
+    font-size: var(--size-500);
+  }
 }
 
 /* --------------------- END UTILITY CLASSES -------------------- */

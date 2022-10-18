@@ -4,9 +4,10 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack",
+    "dev": "webpack --config webpack.config.js",
     "start": "webpack serve --open",
-    "watch": "webpack --watch"
+    "deploy": "gh-pages -d dist",
+    "test": "jest"
   },
   "repository": {
     "type": "git",

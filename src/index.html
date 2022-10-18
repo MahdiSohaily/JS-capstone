@@ -6,35 +6,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/logo-sm.png">
 
-  <title>Frontend Mentor | E-commerce product page</title>
+  <title>Clara Store</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-  Collections
-  Men
-  Women
-  About
-  Contact
-
-  Sneaker Company
-
-  Fall Limited Edition Sneakers
-
-  These low-profile sneakers are your perfect casual wear companion. Featuring a
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart
+  <header class="wrapper">
+    <nav class="navbar p-200">
+      <a href="#">
+        <img width="200" height="70" src="./images/logo-lg.png"
+          alt="logo contains a butterfly and company name(Clara Store)"></a>
+      <div class="nav-list">
+        <ul class="nav-menu">
+          <img class="close-menu p-300" src="./images/icon-close.svg" alt="close menu icon (cross)">
+          <li><a class="list-item text-dark-grayish-blue" href="index.html">Collections</a></li>
+          <li><a class="list-item text-dark-grayish-blue" href="#about">Men</a></li>
+          <li><a class="list-item text-dark-grayish-blue" href="#contact">Women</a></li>
+          <li><a class="list-item text-dark-grayish-blue" href="#contact">Electronics</a></li>
+          <li><a class="list-item text-dark-grayish-blue" href="#contact">Jewelry</a></li>
+          <li><a class="list-item text-dark-grayish-blue" href="#contact">Contact</a></li>
+          <li><a class="list-item text-dark-grayish-blue" href="#contact">About</a></li>
+        </ul>
+      </div>
+      <img class="menu-icon" src="./images/icon-menu.svg" alt="open menu icon (three horizontal bars)">
+    </nav>
+  </header>
+  <main id="app" class="wrapper">
+    <div>
+      <span class="comment-popup" data-display="1">comment</span>
+    </div>
+  </main>
+  <footer class="wrapper">
+    <div class="footer-container">
+      <a class="logo" href="#"><img width="200" height="70" src="./images/logo-lg.png"
+          alt="logo contains a butterfly and company name(Clara Store)"></a>
+      <p class="foot">Created by Mahdi Rezaei & Alejandra Keber</p>
+    </div>
+  </footer>
 </body>
 
 </html>

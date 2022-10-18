@@ -1,15 +1,14 @@
 :root {
   --orange: hsl(26, 100%, 55%);
   --pale-orange: hsl(25, 100%, 94%);
-  --very-dark-blue: hsl(220, 13%, 13%);
-  --dark-grayish-blue: hsl(219, 9%, 45%);
+  --very-dark-blue: hsl(218, 12%, 13%);
+  --dark-grayish-blue: hsl(217, 9%, 45%);
   --grayish-blue: hsl(220, 14%, 75%);
   --light-grayish-blue: hsl(223, 64%, 98%);
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
   --fw-400: 400;
   --fw-700: 700;
-
   --size-100: 0.25em;
   --size-200: 0.5em;
   --size-300: 1em;
@@ -20,6 +19,7 @@
   --size-800: 4em;
   --size-900: 5em;
 }
+
 /* Box sizing rules */
 *,
 *::before,
@@ -35,8 +35,8 @@
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul,
+ol {
   list-style: none;
 }
 
@@ -53,8 +53,8 @@ body {
 }
 
 /* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+a {
+  text-decoration: none;
 }
 
 /* Make images easier to work with */
@@ -89,6 +89,7 @@ select {
 }
 
 /* --------------------- START UTILITY CLASSES -------------------- */
+
 /* Text color */
 .text-orange {
   color: var(--orange);
@@ -535,4 +536,88 @@ select {
   }
 }
 
+.wrapper {
+  max-width: 1140px;
+  margin-inline: auto;
+}
+
 /* --------------------- END UTILITY CLASSES -------------------- */
+
+/* --------------------- START COMPONENT STYLES -------------------- */
+
+/* 1- header section styles */
+header {
+  border-bottom: 1.5px solid var(--grayish-blue);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-list {
+  display: none;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--size-400);
+}
+
+.close-menu,
+.menu-icon {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 50em) {
+  .nav-menu {
+    flex-direction: row;
+  }
+
+  .nav-list {
+    display: block;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .close-menu {
+    display: none;
+  }
+}
+
+.open {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.615);
+}
+
+.open .nav-menu {
+  display: block;
+  text-align: left;
+  position: fixed;
+  width: 240px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--white);
+}
+
+.open .nav-menu .close-menu {
+  margin-bottom: var(--size-700);
+}
+
+.open .nav-menu li {
+  padding: var(--size-300);
+  padding-block: var(--size-200);
+  background-color: var(--white);
+}
+
+.open .nav-menu li a {
+  color: var(--very-dark-blue);
+  font-weight: var(--fw-700);
+}

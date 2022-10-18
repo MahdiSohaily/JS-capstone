@@ -630,8 +630,16 @@ select {
   gap: var(--size-500);
 }
 
+.product {
+  padding: var(--size-300);
+  border-radius: var(--size-200);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
 .product-image {
-  width: 260px;
+  display: block;
+  margin: auto;
+  width: 240px;
   height: 260px;
 }
 
@@ -652,11 +660,40 @@ select {
   gap: var(--size-200);
 }
 
+.like p,
+.comment p {
+  font-size: 13px;
+  color: var(--dark-grayish-blue);
+}
+
 .like img,
 .comment img {
   cursor: pointer;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: var(--size-200);
+}
+
+.pagination .page-item {
+  color: var(--dark-grayish-blue);
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination .active {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.pagination .page-item:hover:not(.active) {
+  background-color: var(--pale-orange);
+}
 @media screen and (min-width: 30em) {
   .product-container {
     display: grid;
@@ -669,7 +706,7 @@ select {
 @media screen and (min-width: 50em) {
   .product-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     flex-direction: column;
     gap: var(--size-500);
   }

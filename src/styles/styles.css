@@ -89,6 +89,7 @@ select {
 }
 
 /* --------------------- START UTILITY CLASSES -------------------- */
+/* Text color */
 .text-orange {
   color: var(--orange);
 }
@@ -119,6 +120,39 @@ select {
 
 .text-black {
   color: var(--black);
+}
+
+/* background colors */
+.bg-orange {
+  background-color: var(--orange);
+}
+
+.bg-pale-orange {
+  background-color: var(--pale-orange);
+}
+
+.bg-very-dark-blue {
+  background-color: var(--very-dark-blue);
+}
+
+.bg-dark-grayish-blue {
+  background-color: var(--dark-grayish-blue);
+}
+
+.bg-grayish-blue {
+  background-color: var(--grayish-blue);
+}
+
+.bg-light-grayish-blue {
+  background-color: var(--light-grayish-blue);
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+
+.bg-black {
+  background-color: var(--black);
 }
 
 /* --------------------- END UTILITY CLASSES -------------------- */

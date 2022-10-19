@@ -621,3 +621,84 @@ header {
   color: var(--very-dark-blue);
   font-weight: var(--fw-700);
 }
+
+/* Popup section */
+
+.popup-container {
+  margin: auto;
+  border: 1px solid black;
+  width: 80%;
+  align-content: center;
+}
+
+.popup-info {
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.prod-detail {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+.prod-img {
+  display: block;
+  margin: auto;
+  width: 240px;
+  height: 260px;
+}
+
+.company-name {
+  color: var(--orange);
+}
+
+.product-title {
+  color: var(--very-dark-blue);
+  font-size: 26px;
+}
+
+.product-description {
+  color: var(--dark-grayish-blue);
+}
+
+.product-price {
+  color: var(--very-dark-blue);
+  font-size: 26px;
+}
+
+.prod-comments {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin: auto;
+  gap: var(--size-900);
+}
+
+.comment-list {
+  color: var(--dark-grayish-blue);
+}
+
+.comments-container {
+  border: 1px solid black;
+}
+
+.add-comment-section {
+  display: flex;
+  flex-direction: column;
+  color: var(--dark-grayish-blue);
+}
+
+.form-comments {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-200);
+}
+
+.submit-comment {
+  background-color: var(--orange);
+  color: white;
+  border: none;
+}

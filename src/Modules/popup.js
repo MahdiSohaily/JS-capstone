@@ -3,7 +3,7 @@ const showPopup = (popupWindow, image, title, description, price, id) => {
       <img class="popup-close" src=".images/icon-close.svg" alt="close icon">
       <div class="popup-info">
         <div class="img-container">
-          <img src=${image} alt="product image">
+          <img class="prod-img" src=${image} alt="product image">
         </div>
         <div class="detail-container">
           <div class="description">

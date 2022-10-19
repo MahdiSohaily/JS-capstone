@@ -12,7 +12,7 @@ const showPopup = (popupWindow, image, title, description, price) => {
             <p class="product-description">${description}</p>
             <p class="product-price">${price}</p>
           </div>
-          <div class="comment-counter">
+          <div class="comment-list">
             <h3 class='comments-counters'></h3>
             <ul class="comments-container">
                   

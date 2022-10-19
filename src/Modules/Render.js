@@ -3,6 +3,8 @@ import getProducts from './GetProducts.js';
 import pagination from '../components/Pagination.js';
 import card from '../components/ProductCards.js';
 import Likes from './Likes.js';
+import showPopup from './popup.js';
+import Comments from './comments.js';
 
 let allProducts = [];
 let allLikedItems = [];
@@ -104,5 +106,23 @@ const start = () => {
     });
   });
 };
+
+
+const openPopup = document.querySelectorAll('.hit-comment'); /* Add class from comment button */
+const popupWindow = document.querySelector('.popup');
+const closePopup = document.querySelector('.popup-close');
+
+openPopup.addEventListener('click', () => {
+
+  getProducts().then(data) => {
+    allProducts = data;
+    showPopup();
+    popupWindow.style.display = 'block';
+  }
+});
+closePopup.addEventListener('click', () => {
+  popupWindow.style.display = 'none';
+});
+
 
 export default start;

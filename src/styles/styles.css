@@ -728,10 +728,11 @@ select {
 /* Popup section */
 
 .popup-container {
-  margin: auto;
-  border: 1px solid black;
-  width: 80%;
-  align-content: center;
+  position: fixed;
+  width: 100%;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.664);
+  padding: var(--size-900);
 }
 
 .popup-info {
@@ -758,7 +759,7 @@ select {
   color: var(--orange);
 }
 
-.product-title {
+prod-img-popup {
   color: var(--very-dark-blue);
   font-size: 26px;
 }

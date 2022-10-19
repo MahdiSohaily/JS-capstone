@@ -3,7 +3,7 @@ const showPopup = (product) => `<div class="popup-container">
   <div class="popup-info">
       <div class="prod-detail">
           <div class="img-container">
-              <img class="prod-img" src=${product.image} alt="product image">
+              <img class="prod-img-popup" src=${product.image} alt="product image">
           </div>
           <div class="detail-container">
               <div class="description">

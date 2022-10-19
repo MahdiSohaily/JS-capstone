@@ -61,6 +61,25 @@ const countLikes = (id) => {
 };
 
 /**
+ * This function add an even Listener to
+ * every comment for the click event.
+ */
+const hitComment = () => {
+  const openPopup =
+    document.querySelectorAll(
+      '.hit-comment'
+    ); /* Add class from comment button */
+  openPopup.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      const element = e.target;
+      const id = element.getAttribute('data-display');
+      const product = allProducts[id - 1];
+      showPopup(product);
+    });
+  });
+};
+
+/**
  * This function accept the following type of parameter
  * @param {number} index and display only a certain range
  * of data at the beginning and others will bw displayed with
@@ -84,6 +103,7 @@ const renderTemplate = (index = 0) => {
   container.innerHTML = template;
   activePagination();
   hitLike();
+  hitComment();
 };
 
 /**
@@ -107,35 +127,10 @@ const start = () => {
   });
 };
 
+// const closePopup = document.querySelector('.popup-close');
 
-/**
- * This function add an even Listener to
- * every comment for the click event.
- */
-const hitComment = () => {
-  const openPopup = document.querySelectorAll('.hit-comment'); /* Add class from comment button */
-  openPopup.forEach((item) => {
-    item.addEventListener('click', (e) => {
-      showPopup(data - display);
-      const element = e.target;
-      const comment = new Comments();
-      comment.setComment(Number(element.getAttribute('submit-comment'))).then(() => {
-        const child = element.nextElementSibling.firstChild;
-        const count = Number(child.innerHTML);
-        child.innerHTML = count + 1;
-      });
-    });
-  });
-};
-
-/* const renderPopup
-hitComment()
-
-
-const closePopup = document.querySelector('.popup-close');
-
-closePopup.addEventListener('click', () => {
-  popupWindow.style.display = 'none';
-}); */
+// closePopup.addEventListener('click', () => {
+//   popupWindow.style.display = 'none';
+// });
 
 export default start;

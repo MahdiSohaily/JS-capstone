@@ -732,7 +732,14 @@ select {
   width: 100%;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.664);
-  padding: var(--size-900);
+  padding: var(--size-800);
+}
+
+.popup-close {
+  width: 25px;
+  align-self: flex-end;
+  padding-right: 10px;
+  padding-top: 10px;
 }
 
 .popup-info {
@@ -740,12 +747,15 @@ select {
   display: flex;
   flex-direction: column;
   margin: auto;
+  overflow-y: auto;
 }
 
 .prod-detail {
   display: flex;
   flex-direction: row;
   margin: auto;
+  gap: var(--size-300);
+  padding: var(--size-300);
 }
 
 .prod-img {
@@ -779,6 +789,7 @@ select {
   text-align: center;
   margin: auto;
   gap: var(--size-900);
+  padding: var(--size-300);
 }
 
 .comment-list {
@@ -786,7 +797,7 @@ select {
 }
 
 .comments-container {
-  border: 1px solid black;
+  border: 1px solid gray;
 }
 
 .add-comment-section {
@@ -805,4 +816,5 @@ select {
   background-color: var(--orange);
   color: white;
   border: none;
+  border-radius: 5px;
 }

@@ -3,12 +3,12 @@ const showPopup = (product) => `<div class="popup-container">
   <div class="popup-info">
       <div class="prod-detail">
           <div class="img-container">
-              <img class="prod-img-popup" src=${product.image} alt="product image">
+              <img class="prod-img" src=${product.image} alt="product image">
           </div>
           <div class="detail-container">
               <div class="description">
                   <h4 class="company-name">'Clara Store'</h4>
-                  <h3 class="product-title">${product.title}</h3>
+                  <h3 class="product-title-popup">${product.title}</h3>
                   <p class="product-description">${product.description}</p>
                   <p class="product-price">${product.price}</p>
               </div>

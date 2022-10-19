@@ -25,7 +25,9 @@ const activePagination = () => {
 };
 
 /**
- * need description
+ * This function add an even Listener to
+ * every like icon for the click event and
+ * then increase the number of an specific item like.
  */
 const hitLike = () => {
   const pagination = document.querySelectorAll('.hit-like');
@@ -83,7 +85,11 @@ const renderTemplate = (index = 0) => {
 };
 
 /**
- *
+ * This function starts on window load and get
+ * two set of data one ofter another in a async
+ * mode.
+ * 1- The number of likes per product
+ * 2- The over all existing products in Store 
  */
 const start = () => {
   window.addEventListener('load', () => {

@@ -3,7 +3,7 @@ import getProducts from './GetProducts.js';
 import pagination from '../components/Pagination.js';
 import card from '../components/ProductCards.js';
 import Likes from './Likes.js';
-import showPopup from './popup.js';
+import showPopup from '../components/popup.js';
 import Comments from './comments.js';
 
 let allProducts = [];

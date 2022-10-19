@@ -1,6 +1,8 @@
 /* eslint-disable linebreak-style */
-function render(obj) {
-  return `
+import getProducts from './GetProducts.js';
+
+let allProducts = [];
+const render = (obj) => `
     <article class="product">
         <header>
           <img class="product-image" src="${obj.image}" alt="Product image">
@@ -22,9 +24,64 @@ function render(obj) {
         </div>
       </article>
     `;
-}
 
-function like(id) {
-  return (id);
+const pagination = (index) => `
+<ul class='pagination'>
+    <li><a class='page-item' data-index='0'>&laquo;</a></li>
+    <li><a class='page-item ${
+  index === 0 ? 'active' : ''
+}' data-index='0'>1</a></li>
+    <li><a class='page-item ${
+  index === 1 ? 'active' : ''
+}' data-index='1'>2</a></li>
+    <li><a class='page-item ${
+  index === 2 ? 'active' : ''
+}' data-index='2'>3</a></li>
+    <li><a class='page-item ${
+  index === 3 ? 'active' : ''
+}' data-index='3'>4</a></li>
+    <li><a class='page-item' data-index='3'>&raquo;</a></li>
+  <ul>
+`;
+
+const addPagination = () => {
+  const pagination = document.querySelectorAll('.page-item');
+  pagination.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      // eslint-disable-next-line no-use-before-define
+      renderTemplate(Number(e.target.getAttribute('data-index')));
+    });
+  });
+};
+
+const renderTemplate = (index = 0) => {
+  const start = index * 6;
+  const container = document.querySelector('#app');
+  let end = index * 6 + 6;
+  let template = '<div class="product-container pt-500 pb-500">';
+  if (end > allProducts.length) {
+    end = allProducts.length;
+  }
+  for (let count = start; count < end; count += 1) {
+    template += render(allProducts[count]);
+  }
+  template += '</div>';
+  template += pagination(index);
+  container.innerHTML = template;
+  addPagination();
+};
+
+/**
+ * this function fire on the page load
+ * and send a get request to an external API
+ * and pass the received data to the @renderTemplate function
+ */
+function appendProducts() {
+  window.addEventListener('load', () => {
+    getProducts().then((data) => {
+      allProducts = data;
+      renderTemplate();
+    });
+  });
 }
-export { render, like };
+export default appendProducts;

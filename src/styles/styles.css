@@ -712,3 +712,7 @@ select {
     gap: var(--size-500);
   }
 }
+
+.hidden {
+  display: none;
+}

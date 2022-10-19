@@ -32,8 +32,8 @@ const activePagination = () => {
  * then increase the number of an specific item like.
  */
 const hitLike = () => {
-  const pagination = document.querySelectorAll('.hit-like');
-  pagination.forEach((item) => {
+  const likeIcons = document.querySelectorAll('.hit-like');
+  likeIcons.forEach((item) => {
     item.addEventListener('click', (e) => {
       const element = e.target;
       element.src = './images/red-hearth.svg';

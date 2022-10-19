@@ -546,7 +546,7 @@ select {
 /* --------------------- START COMPONENT STYLES -------------------- */
 
 /* 1- header section styles */
-header {
+.main-header {
   border-bottom: 1.5px solid var(--grayish-blue);
 }
 
@@ -620,4 +620,99 @@ header {
 .open .nav-menu li a {
   color: var(--very-dark-blue);
   font-weight: var(--fw-700);
+}
+
+/* 2. main page styles */
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  flex-direction: column;
+  gap: var(--size-500);
+}
+
+.product {
+  padding: var(--size-300);
+  border-radius: var(--size-200);
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+}
+
+.product-image {
+  display: block;
+  margin: auto;
+  width: 240px;
+  height: 260px;
+}
+
+.product-title {
+  font-size: var(--size-300);
+}
+
+.actions,
+.like,
+.comment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.like,
+.comment {
+  gap: var(--size-200);
+}
+
+.like p,
+.comment p {
+  font-size: 13px;
+  color: var(--dark-grayish-blue);
+}
+
+.like img,
+.comment img {
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: var(--size-200);
+}
+
+.pagination .page-item {
+  color: var(--dark-grayish-blue);
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination .active {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.pagination .page-item:hover:not(.active) {
+  background-color: var(--pale-orange);
+}
+
+@media screen and (min-width: 30em) {
+  .product-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    flex-direction: column;
+    gap: var(--size-500);
+  }
+}
+
+@media screen and (min-width: 50em) {
+  .product-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-direction: column;
+    gap: var(--size-500);
+  }
+}
+
+.hidden {
+  display: none;
 }

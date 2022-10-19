@@ -128,7 +128,7 @@ const hitComment = () => {
   });
 };
 
-const renderPopup
+/* const renderPopup
 hitComment()
 
 
@@ -136,6 +136,6 @@ const closePopup = document.querySelector('.popup-close');
 
 closePopup.addEventListener('click', () => {
   popupWindow.style.display = 'none';
-});
+}); */
 
 export default start;

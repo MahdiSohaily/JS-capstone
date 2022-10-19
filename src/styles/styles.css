@@ -633,7 +633,7 @@ select {
 .product {
   padding: var(--size-300);
   border-radius: var(--size-200);
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
 }
 
 .product-image {
@@ -694,6 +694,7 @@ select {
 .pagination .page-item:hover:not(.active) {
   background-color: var(--pale-orange);
 }
+
 @media screen and (min-width: 30em) {
   .product-container {
     display: grid;

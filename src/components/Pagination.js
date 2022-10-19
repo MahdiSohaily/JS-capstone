@@ -24,21 +24,4 @@ const createPagination = (index) => `
    <ul>
  `;
 
-/**
- * This function add an event Listener to the
- * pagination items and get their data-index
- * property value on click and sent it to the
- * @renderTemplate function to display different
- * range of data dor the next index of pagination
- */
-const addPagination = () => {
-  const pagination = document.querySelectorAll('.page-item');
-  pagination.forEach((item) => {
-    item.addEventListener('click', (e) => {
-      // eslint-disable-next-line no-use-before-define
-      renderTemplate(Number(e.target.getAttribute('data-index')));
-    });
-  });
-};
-
-export { createPagination, addPagination };
+export default createPagination;

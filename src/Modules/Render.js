@@ -51,9 +51,7 @@ const hitLike = () => {
  * range of data dor the next index of pagination
  */
 const countLikes = (id) => {
-  const item = allLikedItems.filter((elem) => {
-    return elem.item_id === id ? elem : 0;
-  });
+  const item = allLikedItems.filter((elem) => (elem.item_id === id ? elem : 0));
 
   return item;
 };
@@ -75,8 +73,7 @@ const renderTemplate = (index = 0) => {
   for (let count = start; count < end; count += 1) {
     const item = countLikes(allProducts[count].id);
     const likeCount = item.length > 0 ? item[0].likes : 0;
-    console.log(likeCount);
-    template += card(allProducts[count],likeCount);
+    template += card(allProducts[count], likeCount);
   }
   template += '</div>';
   template += pagination(index);
@@ -88,14 +85,18 @@ const renderTemplate = (index = 0) => {
 /**
  *
  */
-window.addEventListener('load', () => {
-  const like = new Likes();
-  like.getLikes().then((data) => {
-    allLikedItems = data;
+const start = () => {
+  window.addEventListener('load', () => {
+    const like = new Likes();
+    like.getLikes().then((data) => {
+      allLikedItems = data;
 
-    getProducts().then((data) => {
-      allProducts = data;
-      renderTemplate();
+      getProducts().then((data) => {
+        allProducts = data;
+        renderTemplate();
+      });
     });
   });
-});
+};
+
+export default start;

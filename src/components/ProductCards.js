@@ -1,4 +1,3 @@
-import Likes from '../Modules/Likes.js';
 /**
  * This function accept the following parameter
  * @param {object} obj and create the following product

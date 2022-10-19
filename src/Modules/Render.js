@@ -89,7 +89,7 @@ const renderTemplate = (index = 0) => {
  * two set of data one ofter another in a async
  * mode.
  * 1- The number of likes per product
- * 2- The over all existing products in Store 
+ * 2- The over all existing products in Store
  */
 const start = () => {
   window.addEventListener('load', () => {

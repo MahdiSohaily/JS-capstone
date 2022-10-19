@@ -2,8 +2,7 @@ import axios from 'axios';
 
 export default class Likes {
   constructor() {
-    this.involvementURL =
-      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
+    this.involvementURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
     this.appID = 'XuUh3fcKVDAPOoTxKraP';
   }
 
@@ -18,7 +17,7 @@ export default class Likes {
       `${this.involvementURL}${this.appID}/likes/`,
       {
         item_id: id,
-      }
+      },
     );
     return response;
   }

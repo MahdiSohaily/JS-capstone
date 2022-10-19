@@ -759,7 +759,7 @@ select {
   color: var(--orange);
 }
 
-prod-img-popup {
+.product-title-popup {
   color: var(--very-dark-blue);
   font-size: 26px;
 }

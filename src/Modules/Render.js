@@ -74,7 +74,13 @@ const hitComment = () => {
       const element = e.target;
       const id = element.getAttribute('data-display');
       const product = allProducts[id - 1];
-      showPopup(product);
+      /* showPopup(product); */
+      const productImage = document.querySelector('.prod-img');
+      productImage.src = product.image;
+
+
+      const popup = document.querySelector('.popup');
+      popup.style.display = 'block';
     });
   });
 };

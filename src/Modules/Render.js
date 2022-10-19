@@ -108,21 +108,34 @@ const start = () => {
 };
 
 
-const openPopup = document.querySelectorAll('.hit-comment'); /* Add class from comment button */
-const popupWindow = document.querySelector('.popup');
+/**
+ * This function add an even Listener to
+ * every comment for the click event.
+ */
+const hitComment = () => {
+  const openPopup = document.querySelectorAll('.hit-comment'); /* Add class from comment button */
+  openPopup.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      showPopup();
+      const element = e.target;
+      const comment = new Comments();
+      comment.setComment(Number(element.getAttribute('submit-comment'))).then(() => {
+        const child = element.nextElementSibling.firstChild;
+        const count = Number(child.innerHTML);
+        child.innerHTML = count + 1;
+      });
+    });
+  });
+};
+
+const renderPopup
+hitComment()
+
+
 const closePopup = document.querySelector('.popup-close');
 
-openPopup.addEventListener('click', () => {
-
-  getProducts().then(data) => {
-    allProducts = data;
-    showPopup();
-    popupWindow.style.display = 'block';
-  }
-});
 closePopup.addEventListener('click', () => {
   popupWindow.style.display = 'none';
 });
-
 
 export default start;

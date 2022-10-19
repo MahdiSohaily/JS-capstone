@@ -2,6 +2,13 @@
 import getProducts from './GetProducts.js';
 
 let allProducts = [];
+
+/**
+ * This function accept the following parameter
+ * @param {object} obj and create the following product
+ * card template and assign the object peoperty 
+ * @returns 
+ */
 const render = (obj) => `
     <article class="product">
         <header>
@@ -25,6 +32,13 @@ const render = (obj) => `
       </article>
     `;
 
+/**
+ * This function creates the HTML Template
+ * for the pagination and accept the following
+ * @param {number} index to mark the current active
+ * pagination item as active and add the active class
+ * @returns the pagination HTML structure.
+ */
 const pagination = (index) => `
 <ul class='pagination'>
     <li><a class='page-item' data-index='0'>&laquo;</a></li>

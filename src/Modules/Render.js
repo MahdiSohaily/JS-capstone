@@ -61,6 +61,19 @@ const countLikes = (id) => {
 };
 
 /**
+ * This function add an event Listener to the
+ * pagination items and get their data-index
+ * property value on click and sent it to the
+ * @renderTemplate function to display different
+ * range of data dor the next index of pagination
+ */
+const countComments = (id) => {
+  const item = allComments.filter((elem) => (elem.item_id === id ? elem : 0));
+
+  return item;
+};
+
+/**
  * This function accept the following type of parameter
  * @param {number} index and display only a certain range
  * of data at the beginning and others will bw displayed with
@@ -75,9 +88,12 @@ const renderTemplate = (index = 0) => {
     end = allProducts.length;
   }
   for (let count = start; count < end; count += 1) {
-    const item = countLikes(allProducts[count].id);
-    const likeCount = item.length > 0 ? item[0].likes : 0;
-    template += card(allProducts[count], likeCount);
+    const liked = countLikes(allProducts[count].id);
+    const likeCount = liked.length > 0 ? liked[0].likes : 0;
+    const commented = countComments(allProducts[count].id);
+    const commentsCount = commented.length > 0 ? commented[0].likes : 0;
+
+    template += card(allProducts[count], likeCount, commentsCount);
   }
   template += '</div>';
   template += pagination(index);
@@ -97,7 +113,8 @@ const start = () => {
   window.addEventListener('load', () => {
     const like = new Likes();
     const comment = new Comments();
-    like.getLikes()
+    like
+      .getLikes()
       .then((data) => {
         allLikedItems = data;
         return comment.getComments();

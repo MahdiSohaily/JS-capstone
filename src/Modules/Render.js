@@ -116,7 +116,7 @@ const hitComment = () => {
   const openPopup = document.querySelectorAll('.hit-comment'); /* Add class from comment button */
   openPopup.forEach((item) => {
     item.addEventListener('click', (e) => {
-      showPopup();
+      showPopup(data - display);
       const element = e.target;
       const comment = new Comments();
       comment.setComment(Number(element.getAttribute('submit-comment'))).then(() => {

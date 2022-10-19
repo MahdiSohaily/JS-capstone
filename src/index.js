@@ -1,4 +1,6 @@
 /* eslint-disable linebreak-style */
 import './styles/styles.css';
-import './Modules/UIEvents.js';
+import './Modules/navbar.js';
+import start from './Modules/Render.js';
 
+start();

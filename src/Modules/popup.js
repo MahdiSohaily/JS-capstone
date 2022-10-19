@@ -32,7 +32,6 @@ const showPopup = (popupWindow, image, title, description, price, id) => {
                       placeholder="Your insight"></textarea>
                   <button id=${id} type="submit" class="submit-comment input">Comment</button>
               </form>
-                        
           </div>
       </div>
   </div>

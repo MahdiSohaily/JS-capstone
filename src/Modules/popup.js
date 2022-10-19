@@ -1,4 +1,4 @@
-const showPopup = (popupWindow, image, title, description, price) => {
+const showPopup = (popupWindow, image, title, description, price, id) => {
   popupWindow.innerHTML = `<div class="popup-container">
       <img class="popup-close" src=".images/icon-close.svg" alt="close icon">
       <div class="popup-info">
@@ -25,7 +25,7 @@ const showPopup = (popupWindow, image, title, description, price) => {
             <form class="form">
                 <input type="text" name="name" id="name" class="input-name" placeholder="Your name">
                 <textarea name="description" id="description" class="input-text" cols="30" rows="10" placeholder="Your insight"></textarea>
-                <button type="submit" class="submit-comment">Comment</button>
+                <button id=${id} type="submit" class="submit-comment input">Comment</button>
             </form>
           </div>
         </div>

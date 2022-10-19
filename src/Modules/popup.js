@@ -1,5 +1,5 @@
 const showPopup = (popupWindow, image, title, description, price) => {
-    popupWindow.innerHTML = `<div class="popup-container">
+  popupWindow.innerHTML = `<div class="popup-container">
       <img class="popup-close" src=".images/icon-close.svg" alt="close icon">
       <div class="popup-info">
         <div class="img-container">

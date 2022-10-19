@@ -5,6 +5,7 @@ import card from '../components/ProductCards.js';
 import Likes from './Likes.js';
 
 let allProducts = [];
+let allLikedItems = [];
 
 /**
  * This function add an event Listener to the
@@ -24,22 +25,37 @@ const activePagination = () => {
 };
 
 /**
+ * need description
+ */
+const hitLike = () => {
+  const pagination = document.querySelectorAll('.hit-like');
+  pagination.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      const element = e.target;
+      element.src = './images/red-hearth.svg';
+      const like = new Likes();
+      like.setLike(Number(element.getAttribute('data-liked'))).then(() => {
+        const child = element.nextElementSibling.firstChild;
+        const count = Number(child.innerHTML);
+        child.innerHTML = count + 1;
+      });
+    });
+  });
+};
+
+/**
  * This function add an event Listener to the
  * pagination items and get their data-index
  * property value on click and sent it to the
  * @renderTemplate function to display different
  * range of data dor the next index of pagination
  */
-const hitLike = () => {
-  const pagination = document.querySelectorAll('.hit-like');
-  pagination.forEach((item) => {
-    item.addEventListener('click', (e) => {
-      e.target.style.fill = 'yellow';
-      console.log(e.target.style.fill);
-      // eslint-disable-next-line no-use-before-define
-      Likes.setLike(Number(e.target.getAttribute('data-liked')));
-    });
+const countLikes = (id) => {
+  const item = allLikedItems.filter((elem) => {
+    return elem.item_id === id ? elem : 0;
   });
+
+  return item;
 };
 
 /**
@@ -57,18 +73,29 @@ const renderTemplate = (index = 0) => {
     end = allProducts.length;
   }
   for (let count = start; count < end; count += 1) {
-    template += card(allProducts[count]);
+    const item = countLikes(allProducts[count].id);
+    const likeCount = item.length > 0 ? item[0].likes : 0;
+    console.log(likeCount);
+    template += card(allProducts[count],likeCount);
   }
   template += '</div>';
   template += pagination(index);
   container.innerHTML = template;
   activePagination();
-  hitLike()
+  hitLike();
 };
 
+/**
+ *
+ */
 window.addEventListener('load', () => {
-  getProducts().then((data) => {
-    allProducts = data;
-    renderTemplate();
+  const like = new Likes();
+  like.getLikes().then((data) => {
+    allLikedItems = data;
+
+    getProducts().then((data) => {
+      allProducts = data;
+      renderTemplate();
+    });
   });
 });

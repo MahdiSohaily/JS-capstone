@@ -44,6 +44,13 @@ const pagination = (index) => `
   <ul>
 `;
 
+/**
+ * This function add an event Listener to the
+ * pagination items and get their data-index
+ * property value on click and sent it to the
+ * @renderTemplate function to display different
+ * range of data dor the next index of pagination
+ */
 const addPagination = () => {
   const pagination = document.querySelectorAll('.page-item');
   pagination.forEach((item) => {
@@ -54,6 +61,12 @@ const addPagination = () => {
   });
 };
 
+/**
+ * This function accept the following type of parameter
+ * @param {number} index and display only a certain range
+ * of data at the beginning and others will bw displayed with
+ * different value of index for pagination
+ */
 const renderTemplate = (index = 0) => {
   const start = index * 6;
   const container = document.querySelector('#app');

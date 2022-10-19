@@ -3,9 +3,11 @@ import getProducts from './GetProducts.js';
 import pagination from '../components/Pagination.js';
 import card from '../components/ProductCards.js';
 import Likes from './Likes.js';
+import Comments from './Comments.js';
 
 let allProducts = [];
 let allLikedItems = [];
+let allComments = [];
 
 /**
  * This function add an event Listener to the
@@ -94,14 +96,20 @@ const renderTemplate = (index = 0) => {
 const start = () => {
   window.addEventListener('load', () => {
     const like = new Likes();
-    like.getLikes().then((data) => {
-      allLikedItems = data;
-
-      getProducts().then((data) => {
+    const comment = new Comments();
+    like.getLikes()
+      .then((data) => {
+        allLikedItems = data;
+        return comment.getComments();
+      })
+      .then((data) => {
+        allComments = data;
+        return getProducts();
+      })
+      .then((data) => {
         allProducts = data;
         renderTemplate();
       });
-    });
   });
 };
 

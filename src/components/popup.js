@@ -1,8 +1,8 @@
-const showPopup = (product) => `<div class="popup-container">
+const showPopup = (product, comments) => `<div class="popup-container">
 <div class="popup-info">
 <img width="20" height="20" class="popup-close" src="./images/icon-close.svg" alt="close icon">
 <div class="prod-detail">
-  <div class="img-container">
+  <div class="image-container">
     <img class="prod-img" src="${product.image}" alt="product image">
   </div>
   <div class="pt-500">
@@ -20,7 +20,7 @@ const showPopup = (product) => `<div class="popup-container">
   <div class="comment-list">
     <h3 class='comments-counters '>Comments (<span class="counter">0</span>) </h3>
     <ul class="comments-container border mt-100">
-      <li></li>
+      ${comments}
     </ul>
   </div>
   <div class="add-comment-section">

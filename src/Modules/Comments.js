@@ -7,7 +7,7 @@ export default class comments {
     this.appID = 'XuUh3fcKVDAPOoTxKraP';
   }
 
-  async getComments(id) {
+  static async getComments(id) {
     const response = await fetch(
       `${this.involvementURL}${this.appID}/comments/?item_id=${id}`);
     const data = await response.json();

@@ -31,7 +31,7 @@ const showPopup = (product, comments) => `<div class="popup-container">
         <input type="text" name="name" aria-label="user name" class="name p-200" placeholder="Your name" required>
           <textarea name="description" aria-label="user message" class="message p-200" cols="30" rows="5"
             placeholder="Your insight..." required></textarea>
-          <button id=${product.id} type="submit" class="submit-comment input p-200">Comment</button>
+          <button id=${product.id} type="submit" class="submit input p-200">Comment</button>
     </form>
   </div>
 </div>

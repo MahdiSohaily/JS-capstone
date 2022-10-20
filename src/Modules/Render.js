@@ -66,8 +66,7 @@ const countLikes = (id) => {
  */
 
 const hitComment = () => {
-  const openPopup =
-    document.querySelectorAll('.hit-comment'); /* Add class from comment button */
+  const openPopup = document.querySelectorAll('.hit-comment'); /* Add class from comment button */
   const popup = document.querySelector('.show-popup');
   const close = document.querySelector('.popup-close');
 
@@ -78,18 +77,15 @@ const hitComment = () => {
       /*  console.log(id); */
       const product = allProducts[id - 1];
       /* console.log(product.image); */
-
       popup.innerHTML = showPopup(product);
     });
   });
 
   /*   close.addEventListener('click', () => {
       popup.style.display = 'none';
-  
+
     }) */
 };
-
-
 
 /**
  * This function accept the following type of parameter

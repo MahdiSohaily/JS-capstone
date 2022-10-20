@@ -740,6 +740,9 @@ select {
   align-self: flex-end;
   padding-right: 10px;
   padding-top: 10px;
+  position: absolute;
+  right: 70px;
+  cursor: pointer;
 }
 
 .popup-info {
@@ -817,4 +820,8 @@ select {
   color: white;
   border: none;
   border-radius: 5px;
+}
+
+.popup {
+  display: block;
 }

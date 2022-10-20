@@ -1,5 +1,6 @@
-const showPopup = (product) => `<div class="popup-container">
-  <img class="popup-close" src=".images/icon-close.svg" alt="close icon">
+const showPopup = (product) =>
+    `<div class="popup-container">
+  <img class="popup-close" src="./images/icon-close.svg" alt="close icon">
   <div class="popup-info">
       <div class="prod-detail">
           <div class="img-container">

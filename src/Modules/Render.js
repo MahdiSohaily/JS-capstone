@@ -64,26 +64,32 @@ const countLikes = (id) => {
  * This function add an even Listener to
  * every comment for the click event.
  */
+
 const hitComment = () => {
   const openPopup =
-    document.querySelectorAll(
-      '.hit-comment'
-    ); /* Add class from comment button */
+    document.querySelectorAll('.hit-comment'); /* Add class from comment button */
+  const popup = document.querySelector('.show-popup');
+  const close = document.querySelector('.popup-close');
+
   openPopup.forEach((item) => {
     item.addEventListener('click', (e) => {
       const element = e.target;
       const id = element.getAttribute('data-display');
+      /*  console.log(id); */
       const product = allProducts[id - 1];
-      /* showPopup(product); */
-      const productImage = document.querySelector('.prod-img');
-      productImage.src = product.image;
+      /* console.log(product.image); */
 
-
-      const popup = document.querySelector('.popup');
-      popup.style.display = 'block';
+      popup.innerHTML = showPopup(product);
     });
   });
+
+  /*   close.addEventListener('click', () => {
+      popup.style.display = 'none';
+  
+    }) */
 };
+
+
 
 /**
  * This function accept the following type of parameter
@@ -121,6 +127,7 @@ const renderTemplate = (index = 0) => {
  */
 const start = () => {
   window.addEventListener('load', () => {
+    hitComment();
     const like = new Likes();
     like.getLikes().then((data) => {
       allLikedItems = data;

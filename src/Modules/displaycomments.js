@@ -9,6 +9,6 @@ const showComments = (comments) => {
   }
   return template;
 };
-const appendComment = () => {};
+/* const appendComment = () => {}; */
 
 export default showComments;

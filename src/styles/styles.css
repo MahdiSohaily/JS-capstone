@@ -727,7 +727,6 @@ select {
   display: none;
 }
 
-
 /* Footer style */
 .footer-container {
   display: flex;
@@ -843,8 +842,8 @@ select {
 
 .popup {
   display: block;
-  }
-  
+}
+
 .item {
   display: inline-block;
   position: relative;

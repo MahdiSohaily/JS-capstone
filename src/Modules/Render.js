@@ -3,6 +3,7 @@ import getProducts from './GetProducts.js';
 import pagination from '../components/Pagination.js';
 import card from '../components/ProductCards.js';
 import Likes from './Likes.js';
+import Comments from './Comments.js';
 
 let allProducts = [];
 let allLikedItems = [];
@@ -64,7 +65,7 @@ const countLikes = (id) => {
  * of data at the beginning and others will bw displayed with
  * different value of index for pagination
  */
-const renderTemplate = (index = 0) => {
+const renderTemplate = async (index = 0) => {
   const start = index * 6;
   const container = document.querySelector('#app');
   let end = index * 6 + 6;
@@ -72,10 +73,14 @@ const renderTemplate = (index = 0) => {
   if (end > allProducts.length) {
     end = allProducts.length;
   }
+  const comment = new Comments();
   for (let count = start; count < end; count += 1) {
     const item = countLikes(allProducts[count].id);
     const likeCount = item.length > 0 ? item[0].likes : 0;
-    template += card(allProducts[count], likeCount);
+    // eslint-disable-next-line no-await-in-loop
+    const data = await comment.getComments(allProducts[count].id);
+    const commentsCount = data.length > 0 ? data.length : 0;
+    template += card(allProducts[count], likeCount, commentsCount);
   }
   template += '</div>';
   template += pagination(index);

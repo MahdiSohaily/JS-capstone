@@ -8,10 +8,10 @@ const showPopup = (product) =>
           </div>
           <div class="detail-container">
               <div class="description">
-                  <h4 class="company-name">'Clara Store'</h4>
+                  <h4 class="company-name">Clara Store</h4>
                   <h3 class="product-title-popup">${product.title}</h3>
                   <p class="product-description">${product.description}</p>
-                  <p class="product-price">'Price: $'${product.price}</p>
+                  <p class="product-price">Price: $${product.price}</p>
               </div>
           </div>
       </div>

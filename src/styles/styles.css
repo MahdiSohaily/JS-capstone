@@ -733,6 +733,7 @@ select {
   inset: 0;
   background-color: rgba(0, 0, 0, 0.664);
   padding: var(--size-800);
+  overflow-y: scroll;
 }
 
 .popup-close {
@@ -764,9 +765,8 @@ select {
 .prod-img {
   display: block;
   margin: auto;
-  max-width: 100%;
+  max-width: 220px;
   height: auto;
-
 }
 
 .company-name {
@@ -780,6 +780,7 @@ select {
 
 .product-description {
   color: var(--dark-grayish-blue);
+  max-width: 90%;
 }
 
 .product-price {

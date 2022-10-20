@@ -800,6 +800,7 @@ select {
   background-color: white;
   margin-top: var(--size-500);
   gap: var(--size-500);
+  flex: 1;
 }
 
 @media screen and (min-width: 40em) {
@@ -807,10 +808,6 @@ select {
     flex-direction: row;
     gap: var(--size-900);
   }
-}
-
-.prod-comments>* {
-  flex: 1;
 }
 
 .comment-list {

@@ -80,7 +80,7 @@ const hitComment = () => {
       const comment = new Comments();
       const data = await comment.getComments(product.id);
       const template = showComments(data);
-      popup.innerHTML = showPopup(product, template);
+      popup.innerHTML = showPopup(product, template, data.length);
       const close = document.querySelector('.popup-close');
       close.addEventListener('click', () => {
         popup.style.display = 'none';
@@ -88,11 +88,14 @@ const hitComment = () => {
       const submit = document.querySelector('.submit');
       const name = document.querySelector('.name');
       const message = document.querySelector('.message');
-      submit.addEventListener('click', (e) => {
+      submit.addEventListener('click', async (e) => {
         e.preventDefault();
         const comment = new Comments();
-        comment.setComment(id, name.value, message.value);
-        popup.innerHTML = showPopup(product, template);
+        comment.setComment(id, name.value, message.value).then(async () => {
+          const data = await comment.getComments(product.id);
+          const template = showComments(data);
+          popup.innerHTML = showPopup(product, template, data.length);
+        });
       });
     });
   });

@@ -20,7 +20,7 @@ const showPopup = (product, comments, count) => `<div class="popup-container">
 </div>
 <div class="prod-comments">
   <div class="comment-list">
-    <h3 class='comments-counters '>Comments (<span class="counter">${Number.isNaN(count) ? count : 0}</span>) </h3>
+    <h3 class='comments-counters '>Comments (<span class="counter">${count > 0 ? count : 0}</span>) </h3>
     <ul class="comments-container border mt-100">
       ${comments}
     </ul>

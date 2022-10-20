@@ -117,7 +117,7 @@ const renderTemplate = async (index = 0) => {
   const start = index * 6;
   const container = document.querySelector('#app');
   let end = index * 6 + 6;
-  let template = '<div class="product-container pt-500 pb-500">';
+  let template = '<div class="product-container pt-500 pb-500 m-300">';
   if (end > allProducts.length) {
     end = allProducts.length;
   }

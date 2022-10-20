@@ -1,7 +1,9 @@
 const showComments = (comments) => {
   let template = '';
-  comments.forEach((element) => {
-    template += `<li>${element.creation_date}</li>`;
+  comments.forEach((element, index) => {
+    template += `<li>${index + 1} - ${element.username} - ${
+      element.comment
+    } - ${element.creation_date}</li>`;
   });
 
   return template;

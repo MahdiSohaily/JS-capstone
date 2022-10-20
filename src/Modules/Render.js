@@ -1,5 +1,4 @@
 /* eslint-disable linebreak-style */
-/* eslint-disable linebreak-style */
 import getProducts from './GetProducts.js';
 import pagination from '../components/Pagination.js';
 import card from '../components/ProductCards.js';
@@ -87,9 +86,13 @@ const hitComment = () => {
         popup.style.display = 'none';
       });
       const submit = document.querySelector('.submit');
+      const name = document.querySelector('.name');
+      const message = document.querySelector('.message');
       submit.addEventListener('click', (e) => {
         e.preventDefault();
-        showComments();
+        const comment = new Comments();
+        comment.setComment(id, name.value, message.value);
+        popup.innerHTML = showPopup(product, template);
       });
     });
   });

@@ -4,7 +4,6 @@ import pagination from '../components/Pagination.js';
 import card from '../components/ProductCards.js';
 import Likes from './Likes.js';
 import showPopup from '../components/popup.js';
-import Comments from './comments.js';
 
 let allProducts = [];
 let allLikedItems = [];
@@ -66,7 +65,7 @@ const countLikes = (id) => {
  */
 
 const hitComment = () => {
-  const openPopup = document.querySelectorAll('.hit-comment'); /* Comment button*/
+  const openPopup = document.querySelectorAll('.hit-comment'); /* Comment button */
   const popup = document.querySelector('.show-popup');
   const close = document.querySelector('.popup-close');
 
@@ -80,9 +79,8 @@ const hitComment = () => {
       if (close) {
         close.addEventListener('click', () => {
           popup.style.display = 'none';
-        })
+        });
       }
-
     });
   });
 };

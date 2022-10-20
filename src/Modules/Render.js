@@ -4,7 +4,7 @@ import pagination from '../components/Pagination.js';
 import card from '../components/ProductCards.js';
 import Likes from './Likes.js';
 import showPopup from '../components/popup.js';
-import Comments from './comments.js';
+import { showComments, addComment } from './displaycomments.js'
 
 let allProducts = [];
 let allLikedItems = [];
@@ -61,35 +61,39 @@ const countLikes = (id) => {
 };
 
 /**
- * This function add an even Listener to
- * every comment for the click event.
+ * This function shows the popup when
+ * click the comment button
  */
 
 const hitComment = () => {
-  const openPopup =
-    document.querySelectorAll('.hit-comment'); /* Add class from comment button */
+  const openPopup = document.querySelectorAll('.hit-comment'); /* Comment button */
   const popup = document.querySelector('.show-popup');
   const close = document.querySelector('.popup-close');
+  const submit = document.querySelector('submit-comment');
+  showComments();
 
   openPopup.forEach((item) => {
     item.addEventListener('click', (e) => {
       const element = e.target;
       const id = element.getAttribute('data-display');
-      /*  console.log(id); */
       const product = allProducts[id - 1];
-      /* console.log(product.image); */
 
       popup.innerHTML = showPopup(product);
+
+      submit.addEventListener('click', (e) => {
+        e.preventDefault();
+        addComment();
+        showComments();
+      });
+
+      if (close) {
+        close.addEventListener('click', () => {
+          popup.style.display = 'none';
+        });
+      }
     });
   });
-
-  /*   close.addEventListener('click', () => {
-      popup.style.display = 'none';
-  
-    }) */
 };
-
-
 
 /**
  * This function accept the following type of parameter
@@ -139,11 +143,5 @@ const start = () => {
     });
   });
 };
-
-// const closePopup = document.querySelector('.popup-close');
-
-// closePopup.addEventListener('click', () => {
-//   popupWindow.style.display = 'none';
-// });
 
 export default start;

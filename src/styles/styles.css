@@ -839,6 +839,10 @@ select {
   cursor: pointer;
 }
 
+.submit-comment:hover {
+  background-color: var(--dark-grayish-blue);
+}
+
 .popup {
   display: block;
 }

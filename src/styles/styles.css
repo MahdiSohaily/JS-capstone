@@ -752,6 +752,11 @@ select {
   flex-direction: column;
   margin: auto;
   overflow-y: auto;
+  border-radius: 10px;
+}
+
+.detail-container {
+  padding: var(--size-200);
 }
 
 .prod-detail {
@@ -775,7 +780,7 @@ select {
 
 .product-title-popup {
   color: var(--very-dark-blue);
-  font-size: 26px;
+  font-size: 24px;
 }
 
 .product-description {
@@ -785,7 +790,7 @@ select {
 
 .product-price {
   color: var(--very-dark-blue);
-  font-size: 26px;
+  font-size: 22px;
 }
 
 .prod-comments {
@@ -823,6 +828,10 @@ select {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.submit-comment:hover {
+  background-color: var(--dark-grayish-blue);
 }
 
 .popup {

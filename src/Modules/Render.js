@@ -61,12 +61,12 @@ const countLikes = (id) => {
 };
 
 /**
- * This function add an even Listener to
- * every comment for the click event.
+ * This function shows the popup when
+ * click the comment button
  */
 
 const hitComment = () => {
-  const openPopup = document.querySelectorAll('.hit-comment'); /* Add class from comment button */
+  const openPopup = document.querySelectorAll('.hit-comment'); /* Comment button*/
   const popup = document.querySelector('.show-popup');
   const close = document.querySelector('.popup-close');
 
@@ -74,17 +74,17 @@ const hitComment = () => {
     item.addEventListener('click', (e) => {
       const element = e.target;
       const id = element.getAttribute('data-display');
-      /*  console.log(id); */
       const product = allProducts[id - 1];
-      /* console.log(product.image); */
       popup.innerHTML = showPopup(product);
+
+      if (close) {
+        close.addEventListener('click', () => {
+          popup.style.display = 'none';
+        })
+      }
+
     });
   });
-
-  /*   close.addEventListener('click', () => {
-      popup.style.display = 'none';
-
-    }) */
 };
 
 /**
@@ -135,11 +135,5 @@ const start = () => {
     });
   });
 };
-
-// const closePopup = document.querySelector('.popup-close');
-
-// closePopup.addEventListener('click', () => {
-//   popupWindow.style.display = 'none';
-// });
 
 export default start;

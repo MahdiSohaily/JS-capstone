@@ -1,4 +1,4 @@
-import Comments from './comments.js';
+import Comments from './Comments.js';
 
 const showComments = async () => {
   const com = await Comments.getComments();

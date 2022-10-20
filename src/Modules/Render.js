@@ -4,7 +4,7 @@ import pagination from '../components/Pagination.js';
 import card from '../components/ProductCards.js';
 import Likes from './Likes.js';
 import showPopup from '../components/popup.js';
-import showComments from './displayComments.js';
+import showComments from './displaycomments.js';
 import Comments from './Comments.js';
 
 let allProducts = [];

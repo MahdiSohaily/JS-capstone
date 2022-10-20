@@ -31,11 +31,11 @@ const card = (obj, likes = 0, comments = 0) => `
         <div class="actions p-300">
             <div class="like">
               <img class="hit-like" data-liked="${obj.id}" width="20" height="20" src="./images/hearth-icon.svg" alt="hearth-icon">
-              <p><b>${likes}</b> like</p>
+              <p><b>${likes}</b> ${likes > 1 ? 'Likes' : 'Like'}</p>
             </div>
             <div class="comment">
               <img class="hit-comment" data-display="${obj.id}" width="20" height="20" src="./images/comment-icon.svg" alt="comment icon">
-              <p><b>${comments}</b> comment</p>
+              <p><b>${comments}</b> ${comments > 1 ? 'comments' : 'comment'}</p>
             </div>
           </div>
         </div>

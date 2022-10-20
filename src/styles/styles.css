@@ -7,8 +7,9 @@
   --light-grayish-blue: hsl(223, 64%, 98%);
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
-  --fw-400: 400;
-  --fw-700: 700;
+  --fw-400: 500;
+  --fw-700: 600;
+  --ff: "Barlow Semi Condensed", sans-serif;
   --size-100: 0.25em;
   --size-200: 0.5em;
   --size-300: 1em;
@@ -18,6 +19,15 @@
   --size-700: 3em;
   --size-800: 4em;
   --size-900: 5em;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: var(--dark-grayish-blue);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--grayish-blue);
 }
 
 /* Box sizing rules */
@@ -31,7 +41,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Red Hat Text', sans-serif;
+  font-family: var(--ff) !important;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -532,7 +542,7 @@ select {
   }
 
   .secondary-heading {
-    font-size: var(--size-500);
+    font-size: var(--size-600);
   }
 }
 
@@ -731,89 +741,88 @@ select {
   position: fixed;
   width: 100%;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.664);
-  padding: var(--size-800);
+  background-color: rgba(0, 0, 0, 0.679);
   overflow-y: scroll;
 }
 
 .popup-close {
-  width: 25px;
-  align-self: flex-end;
-  padding-right: 10px;
-  padding-top: 10px;
   position: absolute;
-  right: 70px;
-  cursor: pointer;
+  right: var(--size-700);
+  top: var(--size-700);
 }
 
 .popup-info {
+  position: relative;
   background-color: var(--white);
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  overflow-y: auto;
-  border-radius: 10px;
-}
-
-.detail-container {
-  padding: var(--size-200);
+  max-width: 1000px;
+  margin-block: var(--size-500);
+  margin-inline: auto;
+  border-radius: 8px;
+  padding: var(--size-400);
 }
 
 .prod-detail {
   display: flex;
-  flex-direction: row;
-  margin: auto;
-  gap: var(--size-300);
-  padding: var(--size-300);
+  flex-direction: column;
+}
+
+@media screen and (min-width: 40em) {
+  .popup-info {
+    padding: var(--size-700);
+  }
+
+  .prod-detail {
+    flex-direction: row;
+    gap: var(--size-900);
+  }
 }
 
 .prod-img {
   display: block;
-  margin: auto;
-  max-width: 220px;
-  height: auto;
+  min-height: 300px;
+  max-width: 350px;
+  border-radius: var(--size-200);
 }
 
-.company-name {
-  color: var(--orange);
-}
-
-.product-title-popup {
-  color: var(--very-dark-blue);
-  font-size: 24px;
-}
-
-.product-description {
-  color: var(--dark-grayish-blue);
-  max-width: 90%;
+.prod-desc {
+  font-size: 16px;
 }
 
 .product-price {
   color: var(--very-dark-blue);
-  font-size: 22px;
+  font-size: 26px;
+  font-weight: var(--fw-700);
 }
 
 .prod-comments {
   display: flex;
-  flex-direction: row;
-  text-align: center;
-  margin: auto;
-  gap: var(--size-900);
-  padding: var(--size-300);
+  flex-direction: column;
+  background-color: white;
+  margin-top: var(--size-500);
+  gap: var(--size-500);
+}
+
+@media screen and (min-width: 40em) {
+  .prod-comments {
+    flex-direction: row;
+    gap: var(--size-900);
+  }
+}
+
+.prod-comments > * {
+  flex: 1;
 }
 
 .comment-list {
   color: var(--dark-grayish-blue);
 }
 
-.comments-container {
-  border: 1px solid gray;
+.border {
+  border-top: 2px solid var(--pale-orange);
 }
 
-.add-comment-section {
-  display: flex;
-  flex-direction: column;
-  color: var(--dark-grayish-blue);
+.comments-container {
+  min-height: 50px;
 }
 
 .form-comments {

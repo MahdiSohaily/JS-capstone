@@ -61,6 +61,14 @@ const countLikes = (id) => {
   return item;
 };
 
+const closeModal = () => {
+  const popup = document.querySelector('.show-popup');
+  const close = document.querySelector('.popup-close');
+  close.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+};
+
 /**
  * This function shows the popup when
  * click the comment button
@@ -81,10 +89,7 @@ const hitComment = () => {
       const data = await comment.getComments(product.id);
       const template = showComments(data);
       popup.innerHTML = showPopup(product, template, data.length);
-      const close = document.querySelector('.popup-close');
-      close.addEventListener('click', () => {
-        popup.style.display = 'none';
-      });
+      closeModal();
       const submit = document.querySelector('.submit');
       const name = document.querySelector('.name');
       const message = document.querySelector('.message');
@@ -95,6 +100,7 @@ const hitComment = () => {
           const data = await comment.getComments(product.id);
           const template = showComments(data);
           popup.innerHTML = showPopup(product, template, data.length);
+          closeModal();
         });
       });
     });

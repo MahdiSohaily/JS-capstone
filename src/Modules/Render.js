@@ -4,7 +4,7 @@ import pagination from '../components/Pagination.js';
 import card from '../components/ProductCards.js';
 import Likes from './Likes.js';
 import showPopup from '../components/popup.js';
-import { showComments, addComment } from './displaycomments.js'
+import { showComments, addComment } from './displaycomments.js';
 
 let allProducts = [];
 let allLikedItems = [];
@@ -89,7 +89,6 @@ const hitComment = () => {
         popup.style.display = 'none';
       });
     });
-
   });
 };
 

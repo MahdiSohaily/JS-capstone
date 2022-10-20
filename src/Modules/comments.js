@@ -6,19 +6,19 @@ export default class Comments {
     this.appID = 'XuUh3fcKVDAPOoTxKraP';
   }
 
-  async getComments() {
-    const response = await fetch(`${this.involvementURL}${this.appID}/comments/`);
+  async getComments(id) {
+    const response = await fetch(`${this.involvementURL}${this.appID}/comments?item_id=${id}`);
     const data = await response.json();
     return data;
   }
 
-  async setComments(id, name, message) {
+  async setComment(id, userName, comment) {
     const response = await axios.post(
       `${this.involvementURL}${this.appID}/comments/`,
       {
         item_id: id,
-        username: name,
-        comment: message,
+        username: userName,
+        comment,
       },
     );
     return response;

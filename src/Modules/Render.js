@@ -7,7 +7,6 @@ import Comments from './Comments.js';
 
 let allProducts = [];
 let allLikedItems = [];
-let allComments = [];
 
 /**
  * This function add an event Listener to the
@@ -32,8 +31,8 @@ const activePagination = () => {
  * then increase the number of an specific item like.
  */
 const hitLike = () => {
-  const likeIcons = document.querySelectorAll('.hit-like');
-  likeIcons.forEach((item) => {
+  const pagination = document.querySelectorAll('.hit-like');
+  pagination.forEach((item) => {
     item.addEventListener('click', (e) => {
       const element = e.target;
       element.src = './images/red-hearth.svg';
@@ -61,25 +60,12 @@ const countLikes = (id) => {
 };
 
 /**
- * This function add an event Listener to the
- * pagination items and get their data-index
- * property value on click and sent it to the
- * @renderTemplate function to display different
- * range of data dor the next index of pagination
- */
-const countComments = (id) => {
-  const item = allComments.filter((elem) => (elem.item_id === id ? elem : 0));
-
-  return item;
-};
-
-/**
  * This function accept the following type of parameter
  * @param {number} index and display only a certain range
  * of data at the beginning and others will bw displayed with
  * different value of index for pagination
  */
-const renderTemplate = (index = 0) => {
+const renderTemplate = async (index = 0) => {
   const start = index * 6;
   const container = document.querySelector('#app');
   let end = index * 6 + 6;
@@ -87,12 +73,13 @@ const renderTemplate = (index = 0) => {
   if (end > allProducts.length) {
     end = allProducts.length;
   }
+  const comment = new Comments();
   for (let count = start; count < end; count += 1) {
-    const liked = countLikes(allProducts[count].id);
-    const likeCount = liked.length > 0 ? liked[0].likes : 0;
-    const commented = countComments(allProducts[count].id);
-    const commentsCount = commented.length > 0 ? commented[0].likes : 0;
-
+    const item = countLikes(allProducts[count].id);
+    const likeCount = item.length > 0 ? item[0].likes : 0;
+    // eslint-disable-next-line no-await-in-loop
+    const data = await comment.getComments(allProducts[count].id);
+    const commentsCount = data.length > 0 ? data.length : 0;
     template += card(allProducts[count], likeCount, commentsCount);
   }
   template += '</div>';
@@ -112,21 +99,15 @@ const renderTemplate = (index = 0) => {
 const start = () => {
   window.addEventListener('load', () => {
     const like = new Likes();
-    const comment = new Comments();
-    like
-      .getLikes()
-      .then((data) => {
-        allLikedItems = data;
-        return comment.getComments();
-      })
-      .then((data) => {
-        allComments = data;
-        return getProducts();
-      })
-      .then((data) => {
+    like.getLikes().then((data) => {
+      allLikedItems = data;
+      getProducts().then((data) => {
         allProducts = data;
+        const products = document.querySelector('#pCount');
+        products.innerHTML = allProducts.length;
         renderTemplate();
       });
+    });
   });
 };
 

@@ -4,7 +4,7 @@ import pagination from '../components/Pagination.js';
 import card from '../components/ProductCards.js';
 import Likes from './Likes.js';
 import showPopup from '../components/popup.js';
-import { showComments, addComment } from './displaycomments.js';
+import showComments from './displaycomments.js';
 import Comments from './Comments.js';
 
 let allProducts = [];
@@ -61,6 +61,14 @@ const countLikes = (id) => {
   return item;
 };
 
+const closeModal = () => {
+  const popup = document.querySelector('.show-popup');
+  const close = document.querySelector('.popup-close');
+  close.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+};
+
 /**
  * This function shows the popup when
  * click the comment button
@@ -69,25 +77,30 @@ const countLikes = (id) => {
 const hitComment = () => {
   const openPopup = document.querySelectorAll('.hit-comment'); /* Comment button */
   const popup = document.querySelector('.show-popup');
-  const submit = document.querySelector('submit-comment');
-  showComments();
 
   openPopup.forEach((item) => {
-    item.addEventListener('click', (e) => {
+    item.addEventListener('click', async (e) => {
+      popup.style.display = 'block';
       const element = e.target;
       const id = element.getAttribute('data-display');
       const product = allProducts[id - 1];
-
-      popup.innerHTML = showPopup(product);
-
-      submit.addEventListener('click', (e) => {
+      const comment = new Comments();
+      const data = await comment.getComments(product.id);
+      const template = showComments(data);
+      popup.innerHTML = showPopup(product, template, data.length);
+      closeModal();
+      const submit = document.querySelector('.submit');
+      const name = document.querySelector('.name');
+      const message = document.querySelector('.message');
+      submit.addEventListener('click', async (e) => {
         e.preventDefault();
-        addComment();
-        showComments();
-      });
-      const close = document.querySelector('.popup-close');
-      close.addEventListener('click', () => {
-        popup.style.display = 'none';
+        const comment = new Comments();
+        comment.setComment(id, name.value, message.value).then(async () => {
+          const data = await comment.getComments(product.id);
+          const template = showComments(data);
+          popup.innerHTML = showPopup(product, template, data.length);
+          closeModal();
+        });
       });
     });
   });
@@ -103,7 +116,7 @@ const renderTemplate = async (index = 0) => {
   const start = index * 6;
   const container = document.querySelector('#app');
   let end = index * 6 + 6;
-  let template = '<div class="product-container pt-500 pb-500">';
+  let template = '<div class="product-container pt-500 pb-500 m-300">';
   if (end > allProducts.length) {
     end = allProducts.length;
   }

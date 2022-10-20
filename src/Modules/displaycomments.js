@@ -10,4 +10,5 @@ const showComments = (comments) => {
   return template;
 };
 const appendComment = () => {};
-export { showComments, appendComment };
+
+export default showComments;

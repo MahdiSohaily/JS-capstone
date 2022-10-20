@@ -4,7 +4,7 @@ import pagination from '../components/Pagination.js';
 import card from '../components/ProductCards.js';
 import Likes from './Likes.js';
 import showPopup from '../components/popup.js';
-import { showComments, appendComment } from './displayComments.js';
+import showComments from './displayComments.js';
 import Comments from './Comments.js';
 
 let allProducts = [];
@@ -75,8 +75,7 @@ const closeModal = () => {
  */
 
 const hitComment = () => {
-  const openPopup =
-    document.querySelectorAll('.hit-comment'); /* Comment button */
+  const openPopup = document.querySelectorAll('.hit-comment'); /* Comment button */
   const popup = document.querySelector('.show-popup');
 
   openPopup.forEach((item) => {

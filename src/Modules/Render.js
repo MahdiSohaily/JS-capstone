@@ -1,4 +1,5 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable linebreak-style */
 import getProducts from './GetProducts.js';
 import pagination from '../components/Pagination.js';
 import card from '../components/ProductCards.js';
@@ -70,10 +71,10 @@ const hitComment = () => {
   const openPopup =
     document.querySelectorAll('.hit-comment'); /* Comment button */
   const popup = document.querySelector('.show-popup');
-  const submit = document.querySelector('submit-comment');
 
   openPopup.forEach((item) => {
     item.addEventListener('click', async (e) => {
+      popup.style.display = 'block';
       const element = e.target;
       const id = element.getAttribute('data-display');
       const product = allProducts[id - 1];
@@ -81,14 +82,14 @@ const hitComment = () => {
       const data = await comment.getComments(product.id);
       const template = showComments(data);
       popup.innerHTML = showPopup(product, template);
-
-      submit.addEventListener('click', (e) => {
-        e.preventDefault();
-        showComments();
-      });
       const close = document.querySelector('.popup-close');
       close.addEventListener('click', () => {
         popup.style.display = 'none';
+      });
+      const submit = document.querySelector('.submit');
+      submit.addEventListener('click', (e) => {
+        e.preventDefault();
+        showComments();
       });
     });
   });

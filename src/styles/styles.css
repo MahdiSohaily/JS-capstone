@@ -1,3 +1,12 @@
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: var(--dark-grayish-blue);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--grayish-blue);
+}
+
 :root {
   --orange: hsl(26, 100%, 55%);
   --pale-orange: hsl(25, 100%, 94%);
@@ -19,15 +28,6 @@
   --size-700: 3em;
   --size-800: 4em;
   --size-900: 5em;
-}
-
-::-webkit-scrollbar {
-  width: 7px;
-  background-color: var(--dark-grayish-blue);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--grayish-blue);
 }
 
 /* Box sizing rules */
@@ -809,7 +809,7 @@ select {
   }
 }
 
-.prod-comments > * {
+.prod-comments>* {
   flex: 1;
 }
 

@@ -1,3 +1,12 @@
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: var(--dark-grayish-blue);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--grayish-blue);
+}
+
 :root {
   --orange: hsl(26, 100%, 55%);
   --pale-orange: hsl(25, 100%, 94%);
@@ -7,8 +16,9 @@
   --light-grayish-blue: hsl(223, 64%, 98%);
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
-  --fw-400: 400;
-  --fw-700: 700;
+  --fw-400: 500;
+  --fw-700: 600;
+  --ff: "Barlow Semi Condensed", sans-serif;
   --size-100: 0.25em;
   --size-200: 0.5em;
   --size-300: 1em;
@@ -31,7 +41,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Red Hat Text', sans-serif;
+  font-family: var(--ff) !important;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -532,7 +542,7 @@ select {
   }
 
   .secondary-heading {
-    font-size: var(--size-500);
+    font-size: var(--size-600);
   }
 }
 
@@ -715,6 +725,123 @@ select {
 
 .hidden {
   display: none;
+}
+
+/* Footer style */
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  vertical-align: middle;
+}
+
+/* Popup section */
+
+.popup-container {
+  position: fixed;
+  width: 100%;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.679);
+  overflow-y: scroll;
+}
+
+.popup-close {
+  position: absolute;
+  right: var(--size-700);
+  top: var(--size-700);
+}
+
+.popup-info {
+  position: relative;
+  background-color: var(--white);
+  max-width: 1000px;
+  margin-block: var(--size-500);
+  margin-inline: auto;
+  border-radius: 8px;
+  padding: var(--size-400);
+}
+
+.prod-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 40em) {
+  .popup-info {
+    padding: var(--size-700);
+  }
+
+  .prod-detail {
+    flex-direction: row;
+    gap: var(--size-900);
+  }
+}
+
+.prod-img {
+  display: block;
+  min-height: 300px;
+  max-width: 350px;
+  border-radius: var(--size-200);
+}
+
+.prod-desc {
+  font-size: 16px;
+}
+
+.product-price {
+  color: var(--very-dark-blue);
+  font-size: 26px;
+  font-weight: var(--fw-700);
+}
+
+.prod-comments {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-top: var(--size-500);
+  gap: var(--size-500);
+  flex: 1;
+}
+
+@media screen and (min-width: 40em) {
+  .prod-comments {
+    flex-direction: row;
+    gap: var(--size-900);
+  }
+}
+
+.comment-list {
+  color: var(--dark-grayish-blue);
+}
+
+.border {
+  border-top: 2px solid var(--pale-orange);
+}
+
+.comments-container {
+  min-height: 50px;
+}
+
+.form-comments {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-200);
+}
+
+.submit-comment {
+  background-color: var(--orange);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-comment:hover {
+  background-color: var(--dark-grayish-blue);
+}
+
+.popup {
+  display: block;
 }
 
 .item {

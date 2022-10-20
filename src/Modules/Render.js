@@ -3,6 +3,8 @@ import getProducts from './GetProducts.js';
 import pagination from '../components/Pagination.js';
 import card from '../components/ProductCards.js';
 import Likes from './Likes.js';
+import showPopup from '../components/popup.js';
+import { showComments, addComment } from './displaycomments.js';
 import Comments from './Comments.js';
 
 let allProducts = [];
@@ -60,6 +62,38 @@ const countLikes = (id) => {
 };
 
 /**
+ * This function shows the popup when
+ * click the comment button
+ */
+
+const hitComment = () => {
+  const openPopup = document.querySelectorAll('.hit-comment'); /* Comment button */
+  const popup = document.querySelector('.show-popup');
+  const submit = document.querySelector('submit-comment');
+  showComments();
+
+  openPopup.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      const element = e.target;
+      const id = element.getAttribute('data-display');
+      const product = allProducts[id - 1];
+
+      popup.innerHTML = showPopup(product);
+
+      submit.addEventListener('click', (e) => {
+        e.preventDefault();
+        addComment();
+        showComments();
+      });
+      const close = document.querySelector('.popup-close');
+      close.addEventListener('click', () => {
+        popup.style.display = 'none';
+      });
+    });
+  });
+};
+
+/**
  * This function accept the following type of parameter
  * @param {number} index and display only a certain range
  * of data at the beginning and others will bw displayed with
@@ -87,6 +121,7 @@ const renderTemplate = async (index = 0) => {
   container.innerHTML = template;
   activePagination();
   hitLike();
+  hitComment();
 };
 
 /**
@@ -98,6 +133,7 @@ const renderTemplate = async (index = 0) => {
  */
 const start = () => {
   window.addEventListener('load', () => {
+    hitComment();
     const like = new Likes();
     like.getLikes().then((data) => {
       allLikedItems = data;

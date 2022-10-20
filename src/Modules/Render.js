@@ -101,9 +101,10 @@ const start = () => {
     const like = new Likes();
     like.getLikes().then((data) => {
       allLikedItems = data;
-
       getProducts().then((data) => {
         allProducts = data;
+        const products = document.querySelector('#pCount');
+        products.innerHTML = allProducts.length;
         renderTemplate();
       });
     });

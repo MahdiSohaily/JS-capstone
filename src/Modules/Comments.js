@@ -2,8 +2,7 @@ import axios from 'axios';
 
 export default class Comments {
   constructor() {
-    this.involvementURL =
-      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
+    this.involvementURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
     this.appID = 'XuUh3fcKVDAPOoTxKraP';
   }
 
@@ -20,7 +19,7 @@ export default class Comments {
         item_id: id,
         username: userName,
         comment,
-      }
+      },
     );
     return response;
   }

@@ -1,4 +1,4 @@
-# JS-capston
+# JS-capstone
 
 This project is the capstone for module 2 the Microverse. It is done as a team and covers the following important topics:
 
@@ -11,22 +11,17 @@ This project is the capstone for module 2 the Microverse. It is done as a team a
 - A popup window with more data about an item that you can use to comment the products and also see a list of comments
 - The application shows the number of likes and comments for each product
 
-## Built With
-
-- Webpack
-- HTML
-- JS
-- CSS
-
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](Not available yet)
 
 ### Prerequisites
 
 For this project you must have node.js installed.
 
-### Setup
+### Setup Project
+
+In order to run this project locally in your machine follow the following steps:
 
 - Run in the directory where you want to clone the repo: git clone https://github.com/MahdiSohaily/JS-capstone.git
 - Open the project in your editor
@@ -36,7 +31,23 @@ For this project you must have node.js installed.
   - npm run dev (to open the index file from dist folder)
   - npm start (to see live version from browser)
 
+## Built With
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- Webpack 5
+- JavaScript
+
 ### Author
+
+👤 **Mahdi Rezaei**
+
+- Frontend Mentor - [@MahdiSohaily](https://www.frontendmentor.io/profile/MahdiSohaily)
+- Twitter - [@Mahdi_Rezaei_AF](https://twitter.com/Mahdi_Rezaei_AF)
+- linkedIn - [@Mahdi-rezaei](https://www.linkedin.com/in/mahdi-rezaei-74705713b)
 
 👤 **Alejandra Keber Maggi**
 
@@ -53,7 +64,3 @@ Feel free to check the [issues page](https://github.com/MahdiSohaily/JS-capstone
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## 📝 License
-
-This project is [MIT](./LICENSE) licensed.

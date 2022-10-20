@@ -4,7 +4,7 @@ import pagination from '../components/Pagination.js';
 import card from '../components/ProductCards.js';
 import Likes from './Likes.js';
 import showPopup from '../components/popup.js';
-import { showComments, addComment } from './displaycomments.js';
+import { showComments, appendComment } from './displayComments.js';
 import Comments from './Comments.js';
 
 let allProducts = [];
@@ -67,22 +67,23 @@ const countLikes = (id) => {
  */
 
 const hitComment = () => {
-  const openPopup = document.querySelectorAll('.hit-comment'); /* Comment button */
+  const openPopup =
+    document.querySelectorAll('.hit-comment'); /* Comment button */
   const popup = document.querySelector('.show-popup');
   const submit = document.querySelector('submit-comment');
-  showComments();
 
   openPopup.forEach((item) => {
-    item.addEventListener('click', (e) => {
+    item.addEventListener('click', async (e) => {
       const element = e.target;
       const id = element.getAttribute('data-display');
       const product = allProducts[id - 1];
-
-      popup.innerHTML = showPopup(product);
+      const comment = new Comments();
+      const data = await comment.getComments(product.id);
+      const template = showComments(data);
+      popup.innerHTML = showPopup(product, template);
 
       submit.addEventListener('click', (e) => {
         e.preventDefault();
-        addComment();
         showComments();
       });
       const close = document.querySelector('.popup-close');

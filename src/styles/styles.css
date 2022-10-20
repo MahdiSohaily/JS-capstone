@@ -764,8 +764,9 @@ select {
 .prod-img {
   display: block;
   margin: auto;
-  width: 240px;
-  height: 260px;
+  max-width: 100%;
+  height: auto;
+
 }
 
 .company-name {
@@ -820,6 +821,7 @@ select {
   color: white;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .popup {

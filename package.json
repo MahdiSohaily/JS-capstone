@@ -1,0 +1,55 @@
+{
+  "name": "js-capston",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "dev": "webpack --config webpack.config.js",
+    "start": "webpack serve --open",
+    "deploy": "gh-pages -d dist",
+    "test": "jest",
+    "css-purge": "purgecss --keyframes --css src/styles/styles.css --content src/index.html \"node_modules/bootstrap/js/dist/{util,modal}.js\" --output src/styles/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MahdiSohaily/JS-capston.git"
+  },
+  "keywords": [],
+  "author": "Mahdi Rezaei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MahdiSohaily/JS-capston/issues"
+  },
+  "homepage": "https://github.com/MahdiSohaily/JS-capston#readme",
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.19.6",
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "babel-eslint": "^10.1.0",
+    "css-loader": "^6.7.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.26.0",
+    "gh-pages": "^4.0.0",
+    "global-jsdom": "^8.6.0",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "jest-environment-jsdom": "^29.2.0",
+    "jsdom": "^20.0.1",
+    "style-loader": "^3.3.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "axios": "^1.1.3",
+    "jest": "^29.2.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "verbose": true
+  }
+}

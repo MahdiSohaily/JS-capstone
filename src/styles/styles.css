@@ -1,10 +1,10 @@
 ::-webkit-scrollbar {
   width: 7px;
-  background-color: var(--dark-grayish-blue);
+  background-color: var(--grayish-blue);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--grayish-blue);
+  background-color: var(--dark-grayish-blue);
 }
 
 :root {
@@ -421,9 +421,15 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   margin: auto;
   vertical-align: middle;
+}
+
+@media screen and (min-width: 40em) {
+  .footer-container {
+    flex-direction: row;
+  }
 }
 
 /* Popup section */

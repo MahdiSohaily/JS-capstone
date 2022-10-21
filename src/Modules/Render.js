@@ -6,6 +6,8 @@ import Likes from './Likes.js';
 import showPopup from '../components/popup.js';
 import showComments from './displaycomments.js';
 import Comments from './Comments.js';
+import countLikes from './likesCount.js';
+import countItems from './itemsCount.js';
 
 let allProducts = [];
 let allLikedItems = [];
@@ -46,19 +48,6 @@ const hitLike = () => {
       });
     });
   });
-};
-
-/**
- * This function add an event Listener to the
- * pagination items and get their data-index
- * property value on click and sent it to the
- * @renderTemplate function to display different
- * range of data dor the next index of pagination
- */
-const countLikes = (id) => {
-  const item = allLikedItems.filter((elem) => (elem.item_id === id ? elem : 0));
-
-  return item;
 };
 
 const closeModal = () => {
@@ -120,14 +109,19 @@ const renderTemplate = async (index = 0) => {
   if (end > allProducts.length) {
     end = allProducts.length;
   }
-  const comment = new Comments();
+
   for (let count = start; count < end; count += 1) {
-    const item = countLikes(allProducts[count].id);
-    const likeCount = item.length > 0 ? item[0].likes : 0;
-    // eslint-disable-next-line no-await-in-loop
-    const data = await comment.getComments(allProducts[count].id);
-    const commentsCount = data.length > 0 ? data.length : 0;
-    template += card(allProducts[count], likeCount, commentsCount);
+    const likeCount = countLikes(allLikedItems, allProducts[count].id);
+    /** WE have the function to get the number of comments for specific card at popup section
+     * Here we were also added that but that was causing the application to be slow
+     * That is way we have added Random number of comments to have better UI insted
+     * of just displaying zeros
+     */
+    template += card(
+      allProducts[count],
+      likeCount,
+      Math.floor(Math.random() * 20),
+    );
   }
   template += '</div>';
   template += pagination(index);
@@ -153,7 +147,7 @@ const start = () => {
       getProducts().then((data) => {
         allProducts = data;
         const products = document.querySelector('#pCount');
-        products.innerHTML = allProducts.length;
+        products.innerHTML = countItems(allProducts);
         renderTemplate();
       });
     });

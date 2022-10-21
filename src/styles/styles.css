@@ -45,8 +45,7 @@
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul,
-ol {
+ul {
   list-style: none;
 }
 
@@ -68,19 +67,12 @@ a {
 }
 
 /* Make images easier to work with */
-img,
-picture {
+img {
   max-width: 100%;
   display: block;
 }
 
 /* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
@@ -101,75 +93,14 @@ select {
 /* --------------------- START UTILITY CLASSES -------------------- */
 
 /* Text color */
-.text-orange {
-  color: var(--orange);
-}
-
-.text-pale-orange {
-  color: var(--pale-orange);
-}
-
-.text-very-dark-blue {
-  color: var(--very-dark-blue);
-}
 
 .text-dark-grayish-blue {
   color: var(--dark-grayish-blue);
 }
 
-.text-grayish-blue {
-  color: var(--grayish-blue);
-}
-
-.text-light-grayish-blue {
-  color: var(--light-grayish-blue);
-}
-
-.text-white {
-  color: var(--white);
-}
-
-.text-black {
-  color: var(--black);
-}
-
 /* background colors */
-.bg-orange {
-  background-color: var(--orange);
-}
-
-.bg-pale-orange {
-  background-color: var(--pale-orange);
-}
-
-.bg-very-dark-blue {
-  background-color: var(--very-dark-blue);
-}
-
-.bg-dark-grayish-blue {
-  background-color: var(--dark-grayish-blue);
-}
-
-.bg-grayish-blue {
-  background-color: var(--grayish-blue);
-}
-
-.bg-light-grayish-blue {
-  background-color: var(--light-grayish-blue);
-}
-
-.bg-white {
-  background-color: var(--white);
-}
-
-.bg-black {
-  background-color: var(--black);
-}
 
 /* padding utility classes */
-.p-100 {
-  padding: var(--size-100);
-}
 
 .p-200 {
   padding: var(--size-200);
@@ -179,372 +110,26 @@ select {
   padding: var(--size-300);
 }
 
-.p-400 {
-  padding: var(--size-400);
-}
-
-.p-500 {
-  padding: var(--size-500);
-}
-
-.p-600 {
-  padding: var(--size-600);
-}
-
-.p-700 {
-  padding: var(--size-700);
-}
-
-.p-800 {
-  padding: var(--size-800);
-}
-
-.p-900 {
-  padding: var(--size-900);
-}
-
-.pt-100 {
-  padding-top: var(--size-100);
-}
-
-.pt-200 {
-  padding-top: var(--size-200);
-}
-
-.pt-300 {
-  padding-top: var(--size-300);
-}
-
-.pt-400 {
-  padding-top: var(--size-400);
-}
-
 .pt-500 {
   padding-top: var(--size-500);
-}
-
-.pt-600 {
-  padding-top: var(--size-600);
-}
-
-.pt-700 {
-  padding-top: var(--size-700);
-}
-
-.pt-800 {
-  padding-top: var(--size-800);
-}
-
-.pt-900 {
-  padding-top: var(--size-900);
-}
-
-.pb-100 {
-  padding-bottom: var(--size-100);
-}
-
-.pb-200 {
-  padding-bottom: var(--size-200);
-}
-
-.pb-300 {
-  padding-bottom: var(--size-300);
-}
-
-.pb-400 {
-  padding-bottom: var(--size-400);
 }
 
 .pb-500 {
   padding-bottom: var(--size-500);
 }
 
-.pb-600 {
-  padding-bottom: var(--size-600);
-}
-
-.pb-700 {
-  padding-bottom: var(--size-700);
-}
-
-.pb-800 {
-  padding-bottom: var(--size-800);
-}
-
-.pb-900 {
-  padding-bottom: var(--size-900);
-}
-
-.pr-100 {
-  padding-right: var(--size-100);
-}
-
-.pr-200 {
-  padding-right: var(--size-200);
-}
-
-.pr-300 {
-  padding-right: var(--size-300);
-}
-
-.pr-400 {
-  padding-right: var(--size-400);
-}
-
-.pr-500 {
-  padding-right: var(--size-500);
-}
-
-.pr-600 {
-  padding-right: var(--size-600);
-}
-
-.pr-700 {
-  padding-right: var(--size-700);
-}
-
-.pr-800 {
-  padding-right: var(--size-800);
-}
-
-.pr-900 {
-  padding-right: var(--size-900);
-}
-
-.pl-100 {
-  padding-left: var(--size-100);
-}
-
-.pl-200 {
-  padding-left: var(--size-200);
-}
-
-.pl-300 {
-  padding-left: var(--size-300);
-}
-
-.pl-400 {
-  padding-left: var(--size-400);
-}
-
-.pl-500 {
-  padding-left: var(--size-500);
-}
-
-.pl-600 {
-  padding-left: var(--size-600);
-}
-
-.pl-700 {
-  padding-left: var(--size-700);
-}
-
-.pl-800 {
-  padding-left: var(--size-800);
-}
-
-.pl-900 {
-  padding-left: var(--size-900);
-}
-
 /* margin utility classes */
-.m-100 {
-  margin: var(--size-100);
-}
-
-.m-200 {
-  margin: var(--size-200);
-}
-
-.m-300 {
-  margin: var(--size-300);
-}
-
-.m-400 {
-  margin: var(--size-400);
-}
-
-.m-500 {
-  margin: var(--size-500);
-}
-
-.m-600 {
-  margin: var(--size-600);
-}
-
-.m-700 {
-  margin: var(--size-700);
-}
-
-.m-800 {
-  margin: var(--size-800);
-}
-
-.m-900 {
-  margin: var(--size-900);
-}
-
-.mt-100 {
-  margin-top: var(--size-100);
-}
-
-.mt-200 {
-  margin-top: var(--size-200);
-}
-
-.mt-300 {
-  margin-top: var(--size-300);
-}
-
-.mt-400 {
-  margin-top: var(--size-400);
-}
-
-.mt-500 {
-  margin-top: var(--size-500);
-}
-
-.mt-600 {
-  margin-top: var(--size-600);
-}
-
-.mt-700 {
-  margin-top: var(--size-700);
-}
-
-.mt-800 {
-  margin-top: var(--size-800);
-}
 
 .mt-900 {
   margin-top: var(--size-900);
-}
-
-.mb-100 {
-  margin-bottom: var(--size-100);
-}
-
-.mb-200 {
-  margin-bottom: var(--size-200);
-}
-
-.mb-300 {
-  margin-bottom: var(--size-300);
-}
-
-.mb-400 {
-  margin-bottom: var(--size-400);
-}
-
-.mb-500 {
-  margin-bottom: var(--size-500);
-}
-
-.mb-600 {
-  margin-bottom: var(--size-600);
-}
-
-.mb-700 {
-  margin-bottom: var(--size-700);
-}
-
-.mb-800 {
-  margin-bottom: var(--size-800);
-}
-
-.mb-900 {
-  margin-bottom: var(--size-900);
-}
-
-.mr-100 {
-  margin-right: var(--size-100);
-}
-
-.mr-200 {
-  margin-right: var(--size-200);
-}
-
-.mr-300 {
-  margin-right: var(--size-300);
 }
 
 .mr-400 {
   margin-right: var(--size-400);
 }
 
-.mr-500 {
-  margin-right: var(--size-500);
-}
-
-.mr-600 {
-  margin-right: var(--size-600);
-}
-
-.mr-700 {
-  margin-right: var(--size-700);
-}
-
-.mr-800 {
-  margin-right: var(--size-800);
-}
-
-.mr-900 {
-  margin-right: var(--size-900);
-}
-
-.ml-100 {
-  margin-left: var(--size-100);
-}
-
-.ml-200 {
-  margin-left: var(--size-200);
-}
-
-.ml-300 {
-  margin-left: var(--size-300);
-}
-
 .ml-400 {
   margin-left: var(--size-400);
-}
-
-.ml-500 {
-  margin-left: var(--size-500);
-}
-
-.ml-600 {
-  margin-left: var(--size-600);
-}
-
-.ml-700 {
-  margin-left: var(--size-700);
-}
-
-.ml-800 {
-  margin-left: var(--size-800);
-}
-
-.ml-900 {
-  margin-left: var(--size-900);
-}
-
-.primary-heading {
-  font-size: var(--size-500);
-}
-
-.secondary-heading {
-  font-size: var(--size-400);
-  line-height: 1;
-}
-
-@media screen and (min-width: 40em) {
-  .primary-heading {
-    font-size: var(--size-600);
-  }
-
-  .secondary-heading {
-    font-size: var(--size-600);
-  }
 }
 
 .wrapper {

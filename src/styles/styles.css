@@ -836,9 +836,15 @@ select {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   margin: auto;
   vertical-align: middle;
+}
+
+@media screen and (min-width: 40em) {
+  .footer-container {
+    flex-direction: row;
+  }
 }
 
 /* Popup section */

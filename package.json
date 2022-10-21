@@ -7,7 +7,8 @@
     "dev": "webpack --config webpack.config.js",
     "start": "webpack serve --open",
     "deploy": "gh-pages -d dist",
-    "test": "jest"
+    "test": "jest",
+    "css-purge": "purgecss --keyframes --css src/styles/styles.css --content src/index.html \"node_modules/bootstrap/js/dist/{util,modal}.js\" --output src/styles/"
   },
   "repository": {
     "type": "git",

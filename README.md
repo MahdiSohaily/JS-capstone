@@ -23,7 +23,11 @@ This project is the capstone for module two of Microverse Bootcamp and has been 
 - Added like and Comment features to the App
 - Added popup window with more data about an item that you can use to comment the products and also see a list of comments
 - Displaying the number of likes and comments for each product
+
+https://user-images.githubusercontent.com/50738922/197218195-92c2f6bb-0368-45a2-ba53-6ba79c2575ef.mp4
+
 ### Screenshot
+
 
 | Desktop version                              |               Mobile Version                |               Mobile Version                |
 | -------------------------------------------- | :-----------------------------------------: |  ----------------------------------------- |

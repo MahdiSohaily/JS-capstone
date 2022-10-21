@@ -6,7 +6,7 @@
  * @returns the final product card template.
  */
 const card = (obj, likes = 0, comments = 0) => `
-<div class="item mr-4 ml-400">
+<div class="item mr-400 ml-400">
 <div class="diamond-container">
   <div class="diamond">
     <div class="diamond-wrapper">

@@ -1,5 +1,18 @@
 import countLikes from '../Modules/likesCount.js';
 import countItems from '../Modules/itemsCount.js';
+import { calculateComments } from '../Modules/Commentcounter.js';
+
+describe('Counting the number Comments', () => {
+  test('Return number of comments', () => {
+    const comments = [
+      { user: 1, comment: 'comment1' },
+      { user: 2, comment: 'comment2' },
+      { user: 3, comment: 'comment3' },
+    ];
+    const result = calculateComments(comments);
+    expect(result).toBe(3);
+  });
+});
 
 describe('Counting the number of likes for specific item test', () => {
   // Test One
@@ -36,7 +49,23 @@ describe('Counting the number of Items for specific item test', () => {
 
   // Test Three
   test('Adding fifteen Objects and test it', () => {
-    const products = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
+    const products = [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+    ];
     expect(countItems(products)).toBe(15);
   });
 });

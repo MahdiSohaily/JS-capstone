@@ -190,6 +190,7 @@ img {
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.615);
+  z-index: 101;
 }
 
 .open .nav-menu {
@@ -476,7 +477,7 @@ img {
 }
 
 .prod-img {
-  max-width: 350px;
+  max-width: 320px;
   border-radius: var(--size-200);
 }
 

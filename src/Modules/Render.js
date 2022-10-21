@@ -55,10 +55,9 @@ const hitLike = () => {
  * @renderTemplate function to display different
  * range of data dor the next index of pagination
  */
-const countLikes = (items, id) => {
-  const item = items.filter((elem) => (elem.item_id === id ? elem : 0));
-
-  return item;
+const countLikes = (likedList, id) => {
+  const item = likedList.filter((elem) => (elem.item_id === id ? elem : 0));
+  return item.length > 0 ? item[0].likes : 0;
 };
 
 const closeModal = () => {
@@ -123,8 +122,7 @@ const renderTemplate = async (index = 0) => {
   }
   const comment = new Comments();
   for (let count = start; count < end; count += 1) {
-    const item = countLikes(allProducts, allProducts[count].id);
-    const likeCount = item.length > 0 ? item[0].likes : 0;
+    const likeCount = countLikes(allLikedItems, allProducts[count].id);
     // eslint-disable-next-line no-await-in-loop
     const data = await comment.getComments(allProducts[count].id);
     const commentsCount = data.length > 0 ? data.length : 0;

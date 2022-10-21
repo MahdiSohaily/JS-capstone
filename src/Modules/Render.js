@@ -49,8 +49,6 @@ const hitLike = () => {
   });
 };
 
-
-
 const closeModal = () => {
   const popup = document.querySelector('.show-popup');
   const close = document.querySelector('.popup-close');

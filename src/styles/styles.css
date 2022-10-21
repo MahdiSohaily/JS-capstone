@@ -1,10 +1,10 @@
 ::-webkit-scrollbar {
   width: 7px;
-  background-color: var(--dark-grayish-blue);
+  background-color: var(--grayish-blue);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--grayish-blue);
+  background-color: var(--dark-grayish-blue);
 }
 
 :root {

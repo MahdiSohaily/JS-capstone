@@ -27,6 +27,10 @@ This project is the capstone for module two of Microverse Bootcamp and has been 
 [![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://drive.google.com/file/d/11owDO3X9f6KLiSCzN1Y80Nqj6BzqEE0C/view?usp=sharing)
 ### Screenshot
 
+
+https://user-images.githubusercontent.com/50738922/197218195-92c2f6bb-0368-45a2-ba53-6ba79c2575ef.mp4
+
+
 | Desktop version                              |               Mobile Version                |               Mobile Version                |
 | -------------------------------------------- | :-----------------------------------------: |  ----------------------------------------- |
 | ![Solution Screenshot](./design/desktop.png) | ![Solution Screenshot](./design/mobile.png) | ![Solution Screenshot](./design/mobile2.png)|

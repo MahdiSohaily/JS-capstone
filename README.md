@@ -24,8 +24,10 @@ This project is the capstone for module two of Microverse Bootcamp and has been 
 - Added popup window with more data about an item that you can use to comment the products and also see a list of comments
 - Displaying the number of likes and comments for each product
 
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://drive.google.com/file/d/11owDO3X9f6KLiSCzN1Y80Nqj6BzqEE0C/view?usp=sharing)
+https://user-images.githubusercontent.com/50738922/197218195-92c2f6bb-0368-45a2-ba53-6ba79c2575ef.mp4
+
 ### Screenshot
+
 
 | Desktop version                              |               Mobile Version                |               Mobile Version                |
 | -------------------------------------------- | :-----------------------------------------: |  ----------------------------------------- |

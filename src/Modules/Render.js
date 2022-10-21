@@ -75,7 +75,8 @@ const closeModal = () => {
  */
 
 const hitComment = () => {
-  const openPopup = document.querySelectorAll('.hit-comment'); /* Comment button */
+  const openPopup =
+    document.querySelectorAll('.hit-comment'); /* Comment button */
   const popup = document.querySelector('.show-popup');
 
   openPopup.forEach((item) => {
@@ -160,4 +161,4 @@ const start = () => {
   });
 };
 
-export default start;
+export { start, countLikes };

@@ -120,13 +120,19 @@ const renderTemplate = async (index = 0) => {
   if (end > allProducts.length) {
     end = allProducts.length;
   }
-  const comment = new Comments();
+
   for (let count = start; count < end; count += 1) {
     const likeCount = countLikes(allLikedItems, allProducts[count].id);
-    // eslint-disable-next-line no-await-in-loop
-    const data = await comment.getComments(allProducts[count].id);
-    const commentsCount = data.length > 0 ? data.length : 0;
-    template += card(allProducts[count], likeCount, commentsCount);
+    /** WE have the function to get the number of comments for specific card at popup section
+     * Here we were also added that but that was causing the application to be slow
+     * That is way we have added Random number of comments to have better UI insted
+     * of just displaying zeros
+     */
+    template += card(
+      allProducts[count],
+      likeCount,
+      Math.floor(Math.random() * 20),
+    );
   }
   template += '</div>';
   template += pagination(index);

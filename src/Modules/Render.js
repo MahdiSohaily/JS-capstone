@@ -6,6 +6,7 @@ import Likes from './Likes.js';
 import showPopup from '../components/popup.js';
 import showComments from './displaycomments.js';
 import Comments from './Comments.js';
+import countLikes from './likesCount.js';
 
 let allProducts = [];
 let allLikedItems = [];
@@ -48,17 +49,7 @@ const hitLike = () => {
   });
 };
 
-/**
- * This function add an event Listener to the
- * pagination items and get their data-index
- * property value on click and sent it to the
- * @renderTemplate function to display different
- * range of data dor the next index of pagination
- */
-const countLikes = (likedList, id) => {
-  const item = likedList.filter((elem) => (elem.item_id === id ? elem : 0));
-  return item.length > 0 ? item[0].likes : 0;
-};
+
 
 const closeModal = () => {
   const popup = document.querySelector('.show-popup');
@@ -74,8 +65,7 @@ const closeModal = () => {
  */
 
 const hitComment = () => {
-  const openPopup =
-    document.querySelectorAll('.hit-comment'); /* Comment button */
+  const openPopup = document.querySelectorAll('.hit-comment'); /* Comment button */
   const popup = document.querySelector('.show-popup');
 
   openPopup.forEach((item) => {
@@ -165,4 +155,4 @@ const start = () => {
   });
 };
 
-export { start, countLikes };
+export default start;

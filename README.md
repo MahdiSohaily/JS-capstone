@@ -1,20 +1,36 @@
 # JS-capstone
+## Table of contents
 
-This project is the capstone for module 2 the Microverse. It is done as a team and covers the following important topics:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [Project Setup](#Setup-Project)
+  - [commands](#command)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-- Built with html, CSS and JavaScript
-- Web pack
-- Connections with APIs
-- -Jest testing
-  We built a web application based on an external API:
-- The main page shows a list or a collection of products (retrieved from an external API) that you can “like”
-- A popup window with more data about an item that you can use to comment the products and also see a list of comments
-- The application shows the number of likes and comments for each product
+## Overview
+This project is the capstone for module two of Microverse Bootcamp and has been done as a team and covered the following topics:
+- Connections to external APIs
+- Testing program functionalities using Jest
+- Displaying some products in to the UI
+- Added like and Comment features to the App
+- Added popup window with more data about an item that you can use to comment the products and also see a list of comments
+- Displaying the number of likes and comments for each product
+### Screenshot
+
+| Desktop version                              |               Mobile Version                |               Mobile Version                |
+| -------------------------------------------- | :-----------------------------------------: |  ----------------------------------------- |
+| ![Solution Screenshot](./design/desktop.png) | ![Solution Screenshot](./design/mobile.png) | ![Solution Screenshot](./design/mobile2.png)|
 
 ## Live Demo
-
-[Live Demo Link](Not available yet)
-
+[MahdiSohaily.github.io/JS-capstone/](MahdiSohaily.github.io/JS-capstone/)
 ### Prerequisites
 
 For this project you must have node.js installed.
@@ -22,24 +38,26 @@ For this project you must have node.js installed.
 ### Setup Project
 
 In order to run this project locally in your machine follow the following steps:
+```
+git clone https://github.com/MahdiSohaily/JS-capstone.git
+cd Todo-app
+npm install
+npm run dev
+npm run start
+```
 
-- Run in the directory where you want to clone the repo: git clone https://github.com/MahdiSohaily/JS-capstone.git
-- Open the project in your editor
-- Run the following command to install dependencies: npm install
-- Run the following command to install webpack: npm install webpack webpack-cli --save-dev
-- To run webpack you must use:
-  - npm run dev (to open the index file from dist folder)
-  - npm start (to see live version from browser)
-
+## My process
 ## Built With
-
-- Semantic HTML5 markup
-- CSS custom properties
+- HTML5 
+- CSS3
+- Purge CSS
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
 - Webpack 5
 - JavaScript
+- Axios
+- Jest for testing
 
 ### Author
 

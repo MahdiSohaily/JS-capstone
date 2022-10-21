@@ -7,7 +7,7 @@ import showPopup from '../components/popup.js';
 import showComments from './displaycomments.js';
 import Comments from './Comments.js';
 import countLikes from './likesCount.js';
-import countItems from './itemsCount';
+import countItems from './itemsCount.js';
 
 let allProducts = [];
 let allLikedItems = [];

@@ -36,7 +36,7 @@ describe('Counting the number of Items for specific item test', () => {
 
   // Test Three
   test('Adding fifteen Objects and test it', () => {
-    const products = [{}, {}, {}, {}, {},{}, {}, {}, {}, {},{}, {}, {}, {}, {}];
+    const products = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
     expect(countItems(products)).toBe(15);
   });
 });

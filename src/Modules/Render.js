@@ -7,6 +7,7 @@ import showPopup from '../components/popup.js';
 import showComments from './displaycomments.js';
 import Comments from './Comments.js';
 import countLikes from './likesCount.js';
+import countItems from './itemsCount';
 
 let allProducts = [];
 let allLikedItems = [];
@@ -146,7 +147,7 @@ const start = () => {
       getProducts().then((data) => {
         allProducts = data;
         const products = document.querySelector('#pCount');
-        products.innerHTML = allProducts.length;
+        products.innerHTML = countItems(allProducts);
         renderTemplate();
       });
     });

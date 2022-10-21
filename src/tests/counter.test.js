@@ -1,4 +1,5 @@
 import countLikes from '../Modules/likesCount.js';
+import countItems from '../Modules/itemsCount.js';
 
 describe('Counting the number of likes for specific item test', () => {
   // Test One
@@ -17,5 +18,25 @@ describe('Counting the number of likes for specific item test', () => {
   test('Adding one Like Object with 1000 likes and test it', () => {
     const allLikedItems = [{ likes: 1000, item_id: 18 }];
     expect(countLikes(allLikedItems, 18)).toBe(1000);
+  });
+});
+
+describe('Counting the number of Items for specific item test', () => {
+  // Test One
+  test('Adding five Objects and test it', () => {
+    const products = [{}, {}, {}, {}, {}];
+    expect(countItems(products)).toBe(5);
+  });
+
+  // Test Two
+  test('Adding ten Objects and test it', () => {
+    const products = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
+    expect(countItems(products)).toBe(10);
+  });
+
+  // Test Three
+  test('Adding fifteen Objects and test it', () => {
+    const products = [{}, {}, {}, {}, {},{}, {}, {}, {}, {},{}, {}, {}, {}, {}];
+    expect(countItems(products)).toBe(15);
   });
 });

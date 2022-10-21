@@ -112,11 +112,6 @@ const renderTemplate = async (index = 0) => {
 
   for (let count = start; count < end; count += 1) {
     const likeCount = countLikes(allLikedItems, allProducts[count].id);
-    /** WE have the function to get the number of comments for specific card at popup section
-     * Here we were also added that but that was causing the application to be slow
-     * That is way we have added Random number of comments to have better UI insted
-     * of just displaying zeros
-     */
     template += card(
       allProducts[count],
       likeCount,
